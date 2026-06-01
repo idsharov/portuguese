@@ -101,13 +101,13 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 .pron-table tbody tr:hover td { background: #faf9f6; }
 
 .pt { font-size: 19px; font-weight: 700; color: #1a1a1a; font-family: 'Georgia', serif; }
-.pt-ico { font-size: 16px; margin-left: 5px; }
+.pt-ico { font-size: 16px; margin-left: 5px; vertical-align: middle; line-height: 1; }
 .ru { color: #666; font-size: 15px; }
 .note { color: #aaa; font-size: 13px; font-style: italic; }
 
 /* gender — ONLY these two colors for gender */
-.m  { color: var(--m); }
-.f  { color: var(--f); }
+.m  { color: var(--m); vertical-align: middle; line-height: 1; }
+.f  { color: var(--f); vertical-align: middle; line-height: 1; }
 
 /* ── ARTICLE GRID ── */
 .art-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
@@ -256,7 +256,10 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
   .funfact { font-size: 14px; padding: 11px 14px; }
   .rule { font-size: 15px; padding: 12px 14px; }
   .pron-table { font-size: 14px; }
-  .pron-table td, .pron-table th { padding: 9px 7px; }
+  .pron-table td, .pron-table th { padding: 8px 6px; }
+  .pron-table th { font-size: 11px; letter-spacing: 0; }
+  .pron-table .pt { font-size: 15px; }
+  .pron-table .pt-ico { font-size: 13px; margin-left: 3px; }
   .obj-table { font-size: 14px; }
   .obj-table td, .obj-table th { padding: 9px 8px; }
   .pt-sm { font-size: 16px; }
@@ -266,9 +269,6 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
   .tb { font-size: 11px; padding: 3px 10px; }
   .verb-ex .vpt { font-size: 13px; }
   .verb-ex .vru { font-size: 12px; }
-  .fc table { font-size: 12px !important; }
-  .fc table th, .fc table td { padding: 6px 6px !important; width: auto !important; min-width: auto !important; height: auto !important; }
-  .cm { width: 70px; font-size: 12px; height: 20px; line-height: 20px; }
 }
 
 /* ── RESPONSIVE: TINY PHONE ── */
@@ -343,14 +343,14 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
               <td class="ru">вы</td>
             </tr>
             <tr>
-              <td class="ru">3-е <span class="m">♂</span></td>
+              <td class="ru">3-е</td>
               <td><span class="pt">ele</span><span class="pt-ico m">♂</span></td>
               <td class="ru">он</td>
               <td><span class="pt">eles</span><span class="pt-ico m">♂♂</span></td>
               <td class="ru">они</td>
             </tr>
             <tr>
-              <td class="ru">3-е <span class="f">♀</span></td>
+              <td class="ru">3-е</td>
               <td><span class="pt">ela</span><span class="pt-ico f">♀</span></td>
               <td class="ru">она</td>
               <td><span class="pt">elas</span><span class="pt-ico f">♀♀</span></td>

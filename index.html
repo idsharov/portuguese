@@ -1,845 +1,147 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Португальский A2 — Блоки 1–2</title>
+<h2 class="sr-only">Таблица неправильных глаголов португальского языка, сгруппированных по семьям, с интерактивными шторками по лицам и временам</h2>
 <style>
-/* ── RESET & BASE ── */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --m: #3b6fd4;        /* masculine blue — ONLY gender */
-  --m-bg: #eef3ff;
-  --m-border: #bac8ff;
-  --f: #c2255c;        /* feminine pink — ONLY gender */
-  --f-bg: #fff0f6;
-  --f-border: #faa2c1;
-  --nav-w: 230px;
-  --color-border-tertiary: #e0ddd5;
-  --color-border-secondary: #ccc9c0;
-  --color-text-primary: #1a1a1a;
-  --color-text-secondary: #555;
-  --color-text-tertiary: #999;
-  --color-background-primary: #fff;
-  --color-background-secondary: #f5f4f0;
-  --border-radius-lg: 12px;
-}
-
-body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  font-size: 17px;
-  background: #f5f4f0;
-  color: #1a1a1a;
-  line-height: 1.6;
-}
-
-/* ── SIDEBAR ── */
-nav {
-  position: fixed; top: 0; left: 0;
-  width: var(--nav-w); height: 100vh;
-  background: #fff; border-right: 1px solid #e0ddd5;
-  padding: 28px 0 32px; overflow-y: auto; z-index: 200;
-  transition: transform .25s ease;
-}
-.nav-course { font-size: 13px; font-weight: 600; color: #1a1a1a; padding: 0 24px 3px; }
-.nav-block-label { font-size: 11px; color: #bbb; padding: 0 24px 16px; border-bottom: 1px solid #f0ede6; margin-bottom: 8px; }
-.nav-group { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #bbb; padding: 16px 24px 6px; }
-nav a { display: block; padding: 9px 24px; text-decoration: none; color: #555; font-size: 15px; border-left: 3px solid transparent; transition: all .15s; }
-nav a:hover { color: #1a1a1a; background: #f5f4f0; border-left-color: #bbb; }
-nav a.active { color: #1a1a1a; font-weight: 600; border-left-color: #5f5f5f; background: #f0ede6; }
-
-/* overlay on mobile */
-.nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 150; }
-.nav-overlay.open { display: block; }
-
-/* hamburger — RIGHT side so it never overlaps left menu */
-.hamburger {
-  display: none; position: fixed; top: 14px; right: 14px; z-index: 300;
-  width: 40px; height: 40px; border-radius: 10px; border: none;
-  background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.18);
-  cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
-}
-.hamburger span { display: block; width: 20px; height: 2px; background: #1a1a1a; border-radius: 2px; transition: all .2s; }
-.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* ── MAIN ── */
-main { margin-left: var(--nav-w); padding: 56px 48px 120px; max-width: calc(var(--nav-w) + 980px); }
-
-/* ── PAGE HEADER ── */
-.page-header { padding-bottom: 40px; border-bottom: 2px solid #e0ddd5; margin-bottom: 0; }
-.page-header .course-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: #999; margin-bottom: 8px; }
-.page-header h1 { font-size: 34px; font-weight: 700; color: #1a1a1a; line-height: 1.2; margin-bottom: 8px; }
-.page-header .page-desc { font-size: 17px; color: #666; }
-
-/* ── SECTION ── */
-.section { padding-top: 80px; margin-top: -40px; }
-.section-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #999; margin-bottom: 8px; }
-h2 { font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
-.section-sub { font-size: 16px; color: #666; margin-bottom: 24px; }
-hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
-
-/* ── TWO-COL LAYOUT ── */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 260px;
-  gap: 28px;
-  align-items: start;
-}
-.col-examples { padding-top: 0; }
-
-/* ── PRONOUN TABLE ── */
-.pron-table { width: 100%; border-collapse: collapse; font-size: 16px; }
-.pron-table th { text-align: left; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #999; padding: 10px 12px; border-bottom: 2px solid #e0ddd5; }
-.pron-table td { padding: 12px 12px; border-bottom: 1px solid #ede9e0; vertical-align: middle; white-space: nowrap; }
-.pron-table tr:last-child td { border-bottom: none; }
-.pron-table tbody tr:hover td { background: #faf9f6; }
-
-.pt { font-size: 19px; font-weight: 700; color: #1a1a1a; font-family: 'Georgia', serif; }
-.pt-ico { font-size: 16px; margin-left: 5px; }
-.ru { color: #666; font-size: 15px; }
-.note { color: #aaa; font-size: 13px; font-style: italic; }
-
-/* gender — ONLY these two colors for gender */
-.m  { color: var(--m); }
-.f  { color: var(--f); }
-
-/* ── ARTICLE GRID ── */
-.art-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-.art-block { background: #fff; border: 1px solid #e0ddd5; border-radius: 12px; padding: 20px 22px; }
-.art-block-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #999; margin-bottom: 16px; }
-.art-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
-.art-cell { border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 3px; }
-.art-cell.masc { background: var(--m-bg); border: 1px solid var(--m-border); }
-.art-cell.fem  { background: var(--f-bg); border: 1px solid var(--f-border); }
-.art-cell .pt  { font-size: 24px; }
-.art-cell .label { font-size: 13px; color: #888; }
-
-/* ── CONTRACTIONS ── */
-.contr-section { margin-bottom: 32px; }
-.contr-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
-.prep-badge { font-size: 20px; font-weight: 700; font-family: 'Georgia', serif; background: #1a1a1a; color: #fff; padding: 4px 12px; border-radius: 6px; }
-.prep-meaning { font-size: 15px; color: #666; }
-.contr-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; background: #fff; border: 1px solid #e0ddd5; border-radius: 12px; padding: 14px; margin-bottom: 8px; }
-.contr-cell { background: #fff; border: 1px solid #e0ddd5; border-radius: 8px; padding: 12px 8px; text-align: center; }
-.contr-cell .result { font-size: 20px; font-weight: 700; font-family: 'Georgia', serif; color: #1a1a1a; margin-bottom: 4px; }
-.contr-cell .formula { font-size: 12px; font-weight: 600; color: #444; letter-spacing: .01em; }
-.contr-cell .meaning { font-size: 11px; color: #888; margin-top: 3px; }
-.contr-cell.masc { background: var(--m-bg); border-color: var(--m-border); }
-.contr-cell.fem  { background: var(--f-bg); border-color: var(--f-border); }
-
-/* ── RULE BOX ── */
-.rule { background: #fff; border: 1px solid #e0ddd5; border-left: 4px solid #555; border-radius: 8px; padding: 16px 20px; margin-bottom: 16px; font-size: 16px; color: #333; }
-.rule strong { color: #1a1a1a; }
-
-/* ── FUN FACT ── */
-.funfact { background: #fffbeb; border: 1px solid #fcd34d; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 13px 18px; margin: 16px 0; font-size: 15px; color: #78350f; }
-.funfact::before { content: '💡 '; }
-.funfact strong { color: #92400e; }
-
-/* ── TABLE CARD WRAPPER ── */
-.table-card { background: #fff; border: 1px solid #e0ddd5; border-radius: 12px; overflow-x: auto; margin-bottom: 16px; -webkit-overflow-scrolling: touch; }
-
-/* ── EXAMPLES — compact, no boxes ── */
-.ex-list { display: flex; flex-direction: column; }
-.ex { padding: 7px 0; border-bottom: 1px solid #ede9e0; }
-.ex:last-child { border-bottom: none; }
-.ex .pt { font-size: 15px; display: block; margin-bottom: 1px; font-family: 'Georgia', serif; font-weight: 700; }
-.ex .ru { font-size: 13px; color: #888; display: block; }
-
-/* ── OBJ PRONOUN TABLE ── */
-.obj-table { width: 100%; border-collapse: collapse; font-size: 16px; }
-.obj-table th { text-align: center; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #999; padding: 10px 12px; border-bottom: 2px solid #e0ddd5; }
-.obj-table th:first-child { text-align: left; }
-.obj-table td { padding: 11px 12px; border-bottom: 1px solid #ede9e0; text-align: center; white-space: nowrap; }
-.obj-table td:first-child { text-align: left; }
-.obj-table tr:last-child td { border-bottom: none; }
-.obj-table tbody tr:hover td { background: #faf9f6; }
-.col-d { }
-.col-i { }
-.pt-sm { font-size: 18px; font-weight: 700; font-family: 'Georgia', serif; }
-
-/* ── POSITION CARDS ── */
-.pos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; margin-bottom: 16px; }
-.pos-card { background: #fff; border: 1px solid #e0ddd5; border-radius: 10px; padding: 18px 20px; }
-.pos-card-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #999; margin-bottom: 10px; }
-.pos-example { font-family: 'Georgia', serif; font-size: 17px; color: #1a1a1a; margin-bottom: 2px; }
-.pos-trans { font-size: 14px; color: #888; }
-
-/* ── AFTER-PREP ── */
-.afterprep-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; background: #fff; border: 1px solid #e0ddd5; border-radius: 12px; padding: 14px; margin-bottom: 16px; }
-.afterprep-cell { background: #fff; border: 1px solid #e0ddd5; border-radius: 8px; padding: 12px 14px; text-align: center; }
-.afterprep-cell .base { font-size: 12px; color: #999; margin-bottom: 4px; }
-.afterprep-cell .result { font-size: 19px; font-weight: 700; font-family: 'Georgia', serif; color: #1a1a1a; }
-.afterprep-cell .meaning { font-size: 12px; color: #666; margin-top: 4px; }
-.afterprep-cell.special { background: #fffbeb; border-color: #fcd34d; }
-
-/* ── DEMONSTRATIVE GRID ── */
-.demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; background: #fff; border: 1px solid #e0ddd5; border-radius: 12px; padding: 14px; margin-bottom: 16px; }
-.demo-cell { background: #fff; border: 1px solid #e0ddd5; border-radius: 8px; padding: 12px; text-align: center; }
-.demo-cell .label { font-size: 12px; color: #999; margin-bottom: 6px; }
-.demo-cell .forms { font-size: 16px; font-family: 'Georgia', serif; font-weight: 700; color: #1a1a1a; }
-.demo-cell .trans { font-size: 12px; color: #666; margin-top: 4px; }
-
-/* ── VERB FAMILIES ── */
-.fc { border-radius: var(--border-radius-lg); overflow: hidden; margin-bottom: 12px; border: 0.5px solid var(--color-border-tertiary); background: #fff; }
-.tb { cursor: pointer; border-radius: 20px; font-size: 12px; font-weight: 500; padding: 4px 12px; border: 1.5px solid; font-family: inherit; transition: opacity .15s; }
-.tb:hover { opacity: .72; }
-/* FIXED-WIDTH marker — never changes cell size */
-.cm { display: inline-block; width: 90px; height: 22px; line-height: 22px; padding: 0; border-radius: 4px; cursor: pointer; user-select: none; text-align: center; font-weight: 500; font-size: 13px; overflow: hidden; vertical-align: middle; }
-.cm:hover { filter: brightness(.82); }
-.rb { cursor: pointer; border-radius: 20px; font-size: 12px; padding: 4px 12px; border: 0.5px dashed var(--color-border-secondary); background: transparent; color: var(--color-text-tertiary); font-family: inherit; font-weight: 400; }
-.rb:hover { background: var(--color-background-secondary); }
-
-/* verb+examples wrapper */
-.verb-row { display: grid; grid-template-columns: 1fr 240px; gap: 16px; align-items: start; margin-bottom: 20px; }
-.verb-exs { padding: 4px 0 0 0; }
-.verb-exs-title { display: none; }
-.verb-ex { margin-bottom: 12px; }
-.verb-ex:last-child { margin-bottom: 0; }
-.verb-ex .vpt { font-family: 'Georgia', serif; font-size: 14px; color: #1a1a1a; line-height: 1.4; }
-.verb-ex .vru { font-size: 13px; color: #777; line-height: 1.4; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  :root { --nav-w: 0px; }
-  nav { transform: translateX(-230px); width: 230px; }
-  nav.open { transform: translateX(0); }
-  .hamburger { display: flex; }
-  main { margin-left: 0; padding: 68px 24px 80px; }
-  .two-col { grid-template-columns: 1fr; }
-  .col-examples { order: 10; }
-  .art-grid { grid-template-columns: 1fr 1fr; }
-  .contr-grid { grid-template-columns: repeat(2, 1fr); }
-  .pos-grid { grid-template-columns: 1fr; }
-  .afterprep-grid { grid-template-columns: 1fr 1fr; }
-  .demo-grid { grid-template-columns: 1fr; }
-  .verb-row { grid-template-columns: 1fr; }
-  .pron-table { font-size: 15px; }
-  .pron-table td, .pron-table th { padding: 10px 8px; }
-}
-
-@media (max-width: 480px) {
-  h2 { font-size: 22px; }
-  .art-grid { grid-template-columns: 1fr; }
-  .afterprep-grid { grid-template-columns: 1fr; }
-  .contr-grid { grid-template-columns: repeat(2, 1fr); }
-}
+.fc{border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:20px;border:0.5px solid var(--color-border-tertiary)}
+.tb{cursor:pointer;border-radius:20px;font-size:12px;font-weight:500;padding:4px 12px;border:1.5px solid;font-family:inherit;transition:opacity .15s}
+.tb:hover{opacity:.72}
+.cm{display:inline-block;padding:3px 10px;border-radius:4px;cursor:pointer;user-select:none;min-width:44px;text-align:center;font-weight:500;font-size:13px}
+.cm:hover{filter:brightness(.82)}
+.rb{cursor:pointer;border-radius:20px;font-size:12px;padding:4px 12px;border:0.5px dashed var(--color-border-secondary);background:transparent;color:var(--color-text-tertiary);font-family:inherit;font-weight:400}
+.rb:hover{background:var(--color-background-secondary)}
 </style>
-</head>
-<body>
-
-<!-- HAMBURGER -->
-<button class="hamburger" id="ham" onclick="toggleNav()" aria-label="Меню">
-  <span></span><span></span><span></span>
-</button>
-<div class="nav-overlay" id="overlay" onclick="toggleNav()"></div>
-
-<!-- SIDEBAR -->
-<nav id="sidebar">
-  <div class="nav-course">Португальский A2</div>
-  <div class="nav-block-label">CIPLE · Шпаргалки</div>
-  <div class="nav-group">Блок 1</div>
-  <a href="#personal">Личные местоимения</a>
-  <a href="#object">Объектные местоимения</a>
-  <a href="#articles">Артикли</a>
-  <a href="#contractions">Слияния предлогов</a>
-  <a href="#prep-pronouns">Предлоги + местоимения</a>
-  <div class="nav-group">Глаголы</div>
-  <a href="#verbs">Неправильные глаголы</a>
-</nav>
-
-<main>
-
-<!-- ── PAGE HEADER ── -->
-<div class="page-header" id="top">
-  <div class="course-label">Português A2 · CIPLE · Европейский португальский</div>
-  <h1>Местоимения, Артикли, Предлоги</h1>
-  <p class="page-desc">Блок 1 + неправильные глаголы с примерами.</p>
+<div style="padding:1.5rem 0 .5rem;text-align:center">
+  <p style="margin:0 0 4px;font-size:11px;font-weight:500;letter-spacing:2px;color:var(--color-text-tertiary)">PORTUGUÊS · VERBOS IRREGULARES</p>
+  <h2 style="margin:0 0 10px;font-size:22px;font-weight:500;color:var(--color-text-primary)">По семьям — с шторками</h2>
+  <p style="margin:0;font-size:13px;color:var(--color-text-secondary)">Нажми кнопку лица → колонка скроется. Кликни <span style="background:var(--color-text-secondary);color:transparent;border-radius:3px;padding:1px 9px;font-size:12px">xxx</span> чтобы открыть.</p>
 </div>
-
-<!-- ══════════ БЛОК 1 ══════════ -->
-
-<!-- 1. ЛИЧНЫЕ МЕСТОИМЕНИЯ -->
-<section class="section" id="personal">
-  <div class="section-label">Блок 1 · Раздел 1</div>
-  <h2>Личные местоимения</h2>
-  <p class="section-sub">Кто выполняет действие — подлежащее предложения.</p>
-
-  <div class="two-col">
-    <div class="col-main">
-      <div class="table-card tbl-scroll">
-        <table class="pron-table">
-          <thead>
-            <tr><th>Лицо</th><th>Единственное</th><th>Перевод</th><th>Множественное</th><th>Перевод</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="ru">1-е</td>
-              <td><span class="pt">eu</span><span class="pt-ico">👨</span></td>
-              <td class="ru">я</td>
-              <td><span class="pt">nós</span><span class="pt-ico">👨👨</span></td>
-              <td class="ru">мы</td>
-            </tr>
-            <tr>
-              <td class="ru">2-е</td>
-              <td><span class="pt">tu</span><span class="pt-ico">👩</span></td>
-              <td class="ru">ты</td>
-              <td><span class="pt">vocês</span><span class="pt-ico">👩👩</span></td>
-              <td class="ru">вы</td>
-            </tr>
-            <tr>
-              <td class="ru">3-е <span class="m">♂</span></td>
-              <td><span class="pt">ele</span><span class="pt-ico m">♂</span></td>
-              <td class="ru">он</td>
-              <td><span class="pt">eles</span><span class="pt-ico m">♂♂</span></td>
-              <td class="ru">они</td>
-            </tr>
-            <tr>
-              <td class="ru">3-е <span class="f">♀</span></td>
-              <td><span class="pt">ela</span><span class="pt-ico f">♀</span></td>
-              <td class="ru">она</td>
-              <td><span class="pt">elas</span><span class="pt-ico f">♀♀</span></td>
-              <td class="ru">они</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note" style="margin-bottom:14px;"><em>vós</em> архаично, в живой речи не используется.</p>
-      <div class="funfact"><strong>eu</strong> — латинское <em>ego</em>. То же слово, что в психологии. Испанский: <em>yo</em>, французский: <em>je</em> — один корень.</div>
-      <div class="funfact"><strong>você</strong> сокращение от <em>Vossa Mercê</em> («Ваша Милость»). Поэтому при нём глагол стоит в 3-м лице: <em>você fala</em> (не <em>falas</em>).</div>
-      <div class="rule">Подлежащее часто опускают — окончание глагола уже показывает лицо.<br><span style="font-family:Georgia;font-size:17px;">Falo português.</span> <span style="color:#aaa;font-size:14px;">(«eu» не нужно)</span></div>
-    </div>
-    <div class="col-examples">
-      <div class="ex-list">
-        <div class="ex"><span class="pt">Ela trabalha em Lisboa.</span><span class="ru">Она работает в Лиссабоне.</span></div>
-        <div class="ex"><span class="pt">Eles chegam amanhã.</span><span class="ru">Они приезжают завтра.</span></div>
-        <div class="ex"><span class="pt">Vocês falam inglês?</span><span class="ru">Вы говорите по-английски?</span></div>
-        <div class="ex"><span class="pt">Falo, logo existo.</span><span class="ru">Говорю — значит, существую.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- 2. ОБЪЕКТНЫЕ МЕСТОИМЕНИЯ -->
-<section class="section" id="object">
-  <div class="section-label">Блок 1 · Раздел 2</div>
-  <h2>Объектные местоимения</h2>
-  <p class="section-sub">Когда существительное уже известно — его заменяют местоимением. Прямое: кого/что. Косвенное: кому/для кого.</p>
-
-  <div class="two-col">
-    <div class="col-main">
-      <div class="table-card tbl-scroll">
-        <table class="obj-table">
-          <thead>
-            <tr>
-              <th>Лицо</th>
-              <th class="col-d">Прямое <span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0">кого/что</span></th>
-              <th class="col-i">Косвенное <span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0">кому</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>eu 👨</td><td class="col-d"><span class="pt-sm">me</span></td><td class="col-i"><span class="pt-sm">me</span></td></tr>
-            <tr><td>tu 👩</td><td class="col-d"><span class="pt-sm">te</span></td><td class="col-i"><span class="pt-sm">te</span></td></tr>
-            <tr><td>ele <span class="m">♂</span></td><td class="col-d"><span class="pt-sm m">o</span></td><td class="col-i"><span class="pt-sm">lhe</span></td></tr>
-            <tr><td>ela <span class="f">♀</span></td><td class="col-d"><span class="pt-sm f">a</span></td><td class="col-i"><span class="pt-sm">lhe</span></td></tr>
-            <tr><td>nós 👨👨</td><td class="col-d"><span class="pt-sm">nos</span></td><td class="col-i"><span class="pt-sm">nos</span></td></tr>
-            <tr><td>eles <span class="m">♂♂</span></td><td class="col-d"><span class="pt-sm m">os</span></td><td class="col-i"><span class="pt-sm">lhes</span></td></tr>
-            <tr><td>elas <span class="f">♀♀</span></td><td class="col-d"><span class="pt-sm f">as</span></td><td class="col-i"><span class="pt-sm">lhes</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="funfact"><strong>lhe</strong> от латинского <em>illi</em> («тому»), того же корня что <em>ele/ela</em>.</div>
-      <div class="rule" style="margin-top:0;"><strong>Порядок: местоимение ПОСЛЕ глагола</strong> через дефис — норма европейского португальского.<br><span style="font-family:Georgia;font-size:16px;">Vejo-<strong>o</strong>. · Dou-<strong>lhe</strong> o livro.</span></div>
-      <div class="pos-grid">
-        <div class="pos-card">
-          <div class="pos-card-title">После não, que, se — ДО глагола</div>
-          <div class="pos-example">Não <strong>me</strong> digas!</div>
-          <div class="pos-trans" style="margin-bottom:10px;">Не говори мне!</div>
-          <div class="pos-example">Ela <strong>te</strong> ligou.</div>
-          <div class="pos-trans">Она тебе позвонила.</div>
-        </div>
-        <div class="pos-card">
-          <div class="pos-card-title">В остальных случаях — ПОСЛЕ</div>
-          <div class="pos-example">Vejo-<strong>o</strong>.</div>
-          <div class="pos-trans" style="margin-bottom:10px;">Я его вижу.</div>
-          <div class="pos-example">Dou-<strong>lhe</strong> o livro.</div>
-          <div class="pos-trans">Я даю ему книгу.</div>
-        </div>
-      </div>
-      <div class="funfact">Энклизис (местоимение после глагола) — норма классической латыни. Бразильский сдвинул вперёд под влиянием африканских языков. <em>Vejo-o</em> — Европа, <em>Eu o vejo</em> — Бразилия.</div>
-    </div>
-    <div class="col-examples">
-      <div class="ex-list">
-        <div class="ex"><span class="pt">Ele chama-<strong>me</strong>.</span><span class="ru">Он зовёт меня.</span></div>
-        <div class="ex"><span class="pt">Conheço-<strong>a</strong> bem.</span><span class="ru">Я её хорошо знаю.</span></div>
-        <div class="ex"><span class="pt">Não <strong>os</strong> vejo.</span><span class="ru">Я их не вижу.</span></div>
-        <div class="ex"><span class="pt">Diz-<strong>lhe</strong> a verdade.</span><span class="ru">Скажи ему правду.</span></div>
-        <div class="ex"><span class="pt">Deram-<strong>nos</strong> o mapa.</span><span class="ru">Нам дали карту.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- 3. АРТИКЛИ -->
-<section class="section" id="articles">
-  <div class="section-label">Блок 1 · Раздел 3</div>
-  <h2>Артикли</h2>
-  <p class="section-sub">Стоят перед существительным, согласуются в роде и числе.</p>
-
-  <div class="two-col">
-    <div class="col-main">
-      <div class="art-grid">
-        <div class="art-block">
-          <div class="art-block-title">Определённый — тот самый</div>
-          <div class="art-row">
-            <div class="art-cell masc"><span class="pt">o</span><span class="label"><span class="m">♂</span> муж. ед. · <em>o livro</em></span></div>
-            <div class="art-cell fem"><span class="pt">a</span><span class="label"><span class="f">♀</span> жен. ед. · <em>a casa</em></span></div>
-          </div>
-          <div class="art-row">
-            <div class="art-cell masc"><span class="pt">os</span><span class="label"><span class="m">♂♂</span> муж. мн. · <em>os livros</em></span></div>
-            <div class="art-cell fem"><span class="pt">as</span><span class="label"><span class="f">♀♀</span> жен. мн. · <em>as casas</em></span></div>
-          </div>
-        </div>
-        <div class="art-block">
-          <div class="art-block-title">Неопределённый — некий</div>
-          <div class="art-row">
-            <div class="art-cell masc"><span class="pt">um</span><span class="label"><span class="m">♂</span> муж. ед. · <em>um livro</em></span></div>
-            <div class="art-cell fem"><span class="pt">uma</span><span class="label"><span class="f">♀</span> жен. ед. · <em>uma casa</em></span></div>
-          </div>
-          <div class="art-row">
-            <div class="art-cell masc"><span class="pt">uns</span><span class="label"><span class="m">♂♂</span> муж. мн. · <em>uns livros</em></span></div>
-            <div class="art-cell fem"><span class="pt">umas</span><span class="label"><span class="f">♀♀</span> жен. мн. · <em>umas casas</em></span></div>
-          </div>
-        </div>
-      </div>
-      <div class="rule"><strong>Без артикля</strong> — профессия после <em>ser</em> и национальность:<br><span style="font-family:Georgia;font-size:17px;">Sou médico. · Sou russo.</span></div>
-      <div class="funfact">Артикли <strong>o/a</strong> — из латинского <em>ille/illa</em> («тот/та»). Тот же путь: испанский <em>el/la</em>, французский <em>le/la</em>, итальянский <em>il/la</em>. Английское «the» из германского <em>þe</em> — тоже указательное. Все европейские артикли когда-то были словом «тот».</div>
-    </div>
-    <div class="col-examples">
-      <div class="ex-list">
-        <div class="ex"><span class="pt">O médico está aqui.</span><span class="ru">Врач (тот самый) здесь.</span></div>
-        <div class="ex"><span class="pt">Preciso de um médico.</span><span class="ru">Мне нужен врач (любой).</span></div>
-        <div class="ex"><span class="pt">As lojas estão fechadas.</span><span class="ru">Магазины закрыты.</span></div>
-        <div class="ex"><span class="pt">Sou médico.</span><span class="ru">Я врач. (без артикля!)</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- 4. СЛИЯНИЯ ПРЕДЛОГОВ -->
-<section class="section" id="contractions">
-  <div class="section-label">Блок 1 · Раздел 4</div>
-  <h2>Слияния предлогов с артиклями</h2>
-  <p class="section-sub">Предлог + артикль всегда сливаются в одно слово. Раздельно — ошибка.</p>
-
-  <!-- DE -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">de</span><span class="prep-meaning">от, из, о — принадлежность, происхождение</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="contr-grid">
-          <div class="contr-cell masc"><div class="result">do</div><div class="formula">de + o</div><div class="meaning"><span class="m">♂</span> муж. ед.</div></div>
-          <div class="contr-cell fem"><div class="result">da</div><div class="formula">de + a</div><div class="meaning"><span class="f">♀</span> жен. ед.</div></div>
-          <div class="contr-cell masc"><div class="result">dos</div><div class="formula">de + os</div><div class="meaning"><span class="m">♂♂</span> муж. мн.</div></div>
-          <div class="contr-cell fem"><div class="result">das</div><div class="formula">de + as</div><div class="meaning"><span class="f">♀♀</span> жен. мн.</div></div>
-        </div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">Sou <strong>do</strong> Porto.</span><span class="ru">Я из Порту. (de + o Porto)</span></div>
-          <div class="ex"><span class="pt">A chave <strong>da</strong> casa.</span><span class="ru">Ключ от дома. (de + a casa)</span></div>
-          <div class="ex"><span class="pt">O sabor <strong>dos</strong> pastéis.</span><span class="ru">Вкус пирожных.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- EM -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">em</span><span class="prep-meaning">в, на — нахождение в месте</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="contr-grid">
-          <div class="contr-cell masc"><div class="result">no</div><div class="formula">em + o</div><div class="meaning"><span class="m">♂</span> муж. ед.</div></div>
-          <div class="contr-cell fem"><div class="result">na</div><div class="formula">em + a</div><div class="meaning"><span class="f">♀</span> жен. ед.</div></div>
-          <div class="contr-cell masc"><div class="result">nos</div><div class="formula">em + os</div><div class="meaning"><span class="m">♂♂</span> муж. мн.</div></div>
-          <div class="contr-cell fem"><div class="result">nas</div><div class="formula">em + as</div><div class="meaning"><span class="f">♀♀</span> жен. мн.</div></div>
-        </div>
-        <div class="funfact"><strong>em</strong> — латинское <em>in</em>, то же что английское «in». <em>No Porto</em> буквально = «in the Porto».</div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">Moro <strong>no</strong> centro.</span><span class="ru">Живу в центре. (em + o)</span></div>
-          <div class="ex"><span class="pt">Estou <strong>na</strong> cozinha.</span><span class="ru">Я на кухне. (em + a)</span></div>
-          <div class="ex"><span class="pt">Trabalho <strong>nas</strong> noites.</span><span class="ru">Работаю ночами.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- A -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">a</span><span class="prep-meaning">в, к — направление движения</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="contr-grid">
-          <div class="contr-cell masc"><div class="result">ao</div><div class="formula">a + o</div><div class="meaning"><span class="m">♂</span> муж. ед.</div></div>
-          <div class="contr-cell fem"><div class="result">à</div><div class="formula">a + a</div><div class="meaning"><span class="f">♀</span> жен. ед.</div></div>
-          <div class="contr-cell masc"><div class="result">aos</div><div class="formula">a + os</div><div class="meaning"><span class="m">♂♂</span> муж. мн.</div></div>
-          <div class="contr-cell fem"><div class="result">às</div><div class="formula">a + as</div><div class="meaning"><span class="f">♀♀</span> жен. мн.</div></div>
-        </div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">Vou <strong>ao</strong> mercado.</span><span class="ru">Иду на рынок. (a + o)</span></div>
-          <div class="ex"><span class="pt">Chego <strong>às</strong> nove.</span><span class="ru">Прихожу в девять. (a + as)</span></div>
-          <div class="ex"><span class="pt">Fui <strong>à</strong> farmácia.</span><span class="ru">Сходил в аптеку.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- POR -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">por</span><span class="prep-meaning">по, через, за</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="contr-grid">
-          <div class="contr-cell masc"><div class="result">pelo</div><div class="formula">por + o</div><div class="meaning"><span class="m">♂</span> муж. ед.</div></div>
-          <div class="contr-cell fem"><div class="result">pela</div><div class="formula">por + a</div><div class="meaning"><span class="f">♀</span> жен. ед.</div></div>
-          <div class="contr-cell masc"><div class="result">pelos</div><div class="formula">por + os</div><div class="meaning"><span class="m">♂♂</span> муж. мн.</div></div>
-          <div class="contr-cell fem"><div class="result">pelas</div><div class="formula">por + as</div><div class="meaning"><span class="f">♀♀</span> жен. мн.</div></div>
-        </div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">Passo <strong>pelo</strong> parque.</span><span class="ru">Прохожу через парк.</span></div>
-          <div class="ex"><span class="pt"><strong>Pela</strong> manhã tomo café.</span><span class="ru">По утрам пью кофе.</span></div>
-          <div class="ex"><span class="pt">Pago <strong>pelos</strong> erros.</span><span class="ru">Плачу за ошибки.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════ БЛОК 2 ══════════ -->
-
-<!-- 5. ПРЕДЛОГИ + МЕСТОИМЕНИЯ -->
-<section class="section" id="prep-pronouns">
-  <div class="section-label">Блок 1 · Раздел 5</div>
-  <h2>Предлоги + местоимения</h2>
-  <p class="section-sub">Те же предлоги сливаются не только с артиклями, но и с местоимениями.</p>
-
-  <!-- de/em + ele/ela -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">de / em</span><span class="prep-meaning">+ 3-е лицо (ele / ela / eles / elas)</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="contr-grid">
-          <div class="contr-cell masc"><div class="result">dele</div><div class="formula">de + ele</div><div class="meaning"><span class="m">♂</span> о нём</div></div>
-          <div class="contr-cell fem"><div class="result">dela</div><div class="formula">de + ela</div><div class="meaning"><span class="f">♀</span> о ней</div></div>
-          <div class="contr-cell masc"><div class="result">nele</div><div class="formula">em + ele</div><div class="meaning"><span class="m">♂</span> в нём</div></div>
-          <div class="contr-cell fem"><div class="result">nela</div><div class="formula">em + ela</div><div class="meaning"><span class="f">♀</span> в ней</div></div>
-        </div>
-        <div class="contr-grid" style="margin-top:8px;">
-          <div class="contr-cell masc"><div class="result">deles</div><div class="formula">de + eles</div><div class="meaning"><span class="m">♂♂</span> о них</div></div>
-          <div class="contr-cell fem"><div class="result">delas</div><div class="formula">de + elas</div><div class="meaning"><span class="f">♀♀</span> о них</div></div>
-          <div class="contr-cell masc"><div class="result">neles</div><div class="formula">em + eles</div><div class="meaning"><span class="m">♂♂</span> в них</div></div>
-          <div class="contr-cell fem"><div class="result">nelas</div><div class="formula">em + elas</div><div class="meaning"><span class="f">♀♀</span> в них</div></div>
-        </div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">A casa <strong>dele</strong> é bonita.</span><span class="ru">Его дом красивый.</span></div>
-          <div class="ex"><span class="pt">Gosto <strong>dela</strong>.</span><span class="ru">Она мне нравится.</span></div>
-          <div class="ex"><span class="pt">Confio <strong>nele</strong>.</span><span class="ru">Я ему доверяю.</span></div>
-          <div class="ex"><span class="pt">Penso <strong>nelas</strong> sempre.</span><span class="ru">Я всегда думаю о них.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- de/em + demonstratives -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">de / em</span><span class="prep-meaning">+ указательные (isto / isso / aquilo)</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="demo-grid">
-          <div class="demo-cell">
-            <div class="label">isto — это (здесь)</div>
-            <div class="forms">disto · nisto</div>
-            <div class="trans">из этого · в этом</div>
-          </div>
-          <div class="demo-cell">
-            <div class="label">isso — то (там, у тебя)</div>
-            <div class="forms">disso · nisso</div>
-            <div class="trans">из того · в том</div>
-          </div>
-          <div class="demo-cell">
-            <div class="label">aquilo — то (вон там)</div>
-            <div class="forms">daquilo · naquilo</div>
-            <div class="trans">из того · в том</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">Gosto <strong>disto</strong>.</span><span class="ru">Мне это нравится.</span></div>
-          <div class="ex"><span class="pt">Não fales <strong>nisso</strong>.</span><span class="ru">Не говори об этом.</span></div>
-          <div class="ex"><span class="pt">O que é <strong>aquilo</strong>?</span><span class="ru">Что это там такое?</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- После предлогов: mim/ti -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">para / sem…</span><span class="prep-meaning">меняются только eu → mim и tu → ti</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="afterprep-grid">
-          <div class="afterprep-cell special"><div class="base">eu →</div><div class="result">mim</div><div class="meaning">para <strong>mim</strong></div></div>
-          <div class="afterprep-cell special"><div class="base">tu →</div><div class="result">ti</div><div class="meaning">para <strong>ti</strong></div></div>
-          <div class="afterprep-cell"><div class="base">ele/ela →</div><div class="result">ele/ela</div><div class="meaning">para <strong>ele</strong></div></div>
-          <div class="afterprep-cell"><div class="base">nós →</div><div class="result">nós</div><div class="meaning">para <strong>nós</strong></div></div>
-          <div class="afterprep-cell"><div class="base">vocês →</div><div class="result">vocês</div><div class="meaning">para <strong>vocês</strong></div></div>
-          <div class="afterprep-cell"><div class="base">eles/elas →</div><div class="result">eles/elas</div><div class="meaning">para <strong>eles</strong></div></div>
-        </div>
-        <div class="rule"><strong>com</strong> сливается в одно слово:<br><span style="font-family:Georgia;font-size:16px;">comigo · contigo · connosco</span></div>
-        <div class="funfact"><strong>comigo/contigo/connosco</strong> — из латинского <em>mecum/tecum/nobiscum</em>, где «cum» было суффиксом. По-португальски суффикс переехал вперёд и стал приставкой.</div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">Isto é para <strong>mim</strong>?</span><span class="ru">Это для меня?</span></div>
-          <div class="ex"><span class="pt">Vem <strong>comigo</strong>!</span><span class="ru">Иди со мной!</span></div>
-          <div class="ex"><span class="pt">Ele fala de <strong>ti</strong>.</span><span class="ru">Он говорит о тебе.</span></div>
-          <div class="ex"><span class="pt">Quero falar <strong>contigo</strong>.</span><span class="ru">Хочу с тобой поговорить.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════ НЕПРАВИЛЬНЫЕ ГЛАГОЛЫ ══════════ -->
-<section class="section" id="verbs">
-  <div class="section-label">Глаголы</div>
-  <h2>Неправильные глаголы</h2>
-  <p class="section-sub">Сгруппированы по семьям. Нажми лицо или время — скроется для самопроверки. Кликни закрашенный блок — откроется.</p>
-  <div id="fams"></div>
-</section>
-
-</main>
-
-<!-- ── JS: NAV TOGGLE ── -->
+<div id="fams"></div>
 <script>
-function toggleNav() {
-  const nav = document.getElementById('sidebar');
-  const ham = document.getElementById('ham');
-  const ov  = document.getElementById('overlay');
-  nav.classList.toggle('open');
-  ham.classList.toggle('open');
-  ov.classList.toggle('open');
-}
-
-// scroll spy
-const sections = document.querySelectorAll('.section');
-const navLinks  = document.querySelectorAll('nav a');
-const spy = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      const a = document.querySelector(`nav a[href="#${e.target.id}"]`);
-      if (a) a.classList.add('active');
-    }
-  });
-}, { rootMargin: '-20% 0px -65% 0px' });
-sections.forEach(s => spy.observe(s));
-</script>
-
-<!-- ── JS: VERB FAMILIES ── -->
-<script>
-const P = ['eu','tu','ele/ela','nós','eles'];
-
-const F = [
-{id:'twins', bg:'≡', nm:'Близнецы: ir = ser', cl:'#C94040',
- ds:'В португальском «идти» (ir) и «быть» (ser) в прошедшем совпадают полностью. Только контекст покажет, что имеется в виду.',
- exs:[
-   {pt:'Fui ao hospital às 3 da manhã.', ru:'Пошёл/Был в больнице в 3 ночи.'},
-   {pt:'Ela foi enfermeira antes de ser cantora.', ru:'Она была медсестрой до того, как стала певицей.'},
-   {pt:'Fomos de táxi e pagámos uma fortuna.', ru:'Поехали на такси и заплатили целое состояние.'},
- ],
- vs:[
-   {n:'ir',  r:'идти', p:['vou','vais','vai','vamos','vão'],  pt:['fui','foste','foi','fomos','foram']},
-   {n:'ser', r:'быть', p:['sou','és','é','somos','são'],      pt:['fui','foste','foi','fomos','foram']},
- ]},
-
-{id:'ive', bg:'iv', nm:'Семья -ive', cl:'#2E6DB4',
- ds:'tive и estive образованы по одному образцу — у них одинаковые окончания в прошедшем. vir выбивается формой vim, но родство видно в vieste, viemos.',
- exs:[
-   {pt:'Tive um pesadelo com o exame.', ru:'Приснился кошмар про экзамен.'},
-   {pt:'Estive à espera três horas — ele não apareceu.', ru:'Прождал три часа, он не появился.'},
-   {pt:'Vim a pé porque o carro avariou.', ru:'Пришёл пешком — машина сломалась.'},
- ],
- vs:[
-   {n:'ter',   r:'иметь',     p:['tenho','tens','tem','temos','têm'],      pt:['tive','tiveste','teve','tivemos','tiveram']},
-   {n:'estar', r:'находиться',p:['estou','estás','está','estamos','estão'],pt:['estive','estiveste','esteve','estivemos','estiveram']},
-   {n:'vir',   r:'прийти',    p:['venho','vens','vem','vimos','vêm'],      pt:['vim','vieste','veio','viemos','vieram']},
- ]},
-
-{id:'uve', bg:'ou', nm:'Семья -uve / -ude', cl:'#1A8C65',
- ds:'В прошедшем основа меняется: saber→soube, poder→pude, haver→houve. Haver сейчас почти не используется — только houve («произошло»).',
- exs:[
-   {pt:'Soube da notícia pelo vizinho.', ru:'Узнал новость от соседа.'},
-   {pt:'Não pude dormir por causa do barulho.', ru:'Не мог спать из-за шума.'},
-   {pt:'Houve um problema com o bilhete.', ru:'С билетом возникла проблема.'},
- ],
- vs:[
-   {n:'saber', r:'знать', p:['sei','sabes','sabe','sabemos','sabem'],   pt:['soube','soubeste','soube','soubemos','souberam']},
-   {n:'poder', r:'мочь',  p:['posso','podes','pode','podemos','podem'], pt:['pude','pudeste','pôde','pudemos','puderam']},
-   {n:'haver', r:'вспом.',p:['—','—','há','—','—'],                    pt:['—','—','houve','—','—']},
- ]},
-
-{id:'str', bg:'S!', nm:'Непредсказуемое прошедшее', cl:'#6B5FCC',
- ds:'Основа в прошедшем меняется полностью — не угадать из инфинитива. fazer→fiz, dizer→disse, trazer→trouxe, pôr→pus. Надо просто запомнить.',
- exs:[
-   {pt:'Fiz café e esqueci de beber.', ru:'Сделал кофе и забыл выпить.'},
-   {pt:'Disse que era alérgica ao bacalhau.', ru:'Сказала, что у неё аллергия на треску.'},
-   {pt:'Trouxe flores erradas para o funeral.', ru:'Принёс не те цветы на похороны.'},
- ],
- vs:[
-   {n:'fazer', r:'делать',  p:['faço','fazes','faz','fazemos','fazem'],    pt:['fiz','fizeste','fez','fizemos','fizeram']},
-   {n:'dizer', r:'говорить',p:['digo','dizes','diz','dizemos','dizem'],    pt:['disse','disseste','disse','dissemos','disseram']},
-   {n:'trazer',r:'нести',   p:['trago','trazes','traz','trazemos','trazem'],pt:['trouxe','trouxeste','trouxe','trouxemos','trouxeram']},
-   {n:'pôr',   r:'класть',  p:['ponho','pões','põe','pomos','põem'],       pt:['pus','puseste','pôs','pusemos','puseram']},
- ]},
-
-{id:'reb', bg:'R', nm:'Особняки', cl:'#A06010',
- ds:'dar — короткий -ar глагол, но прошедшее как у -ir/-er: dei, deste, deu. querer: в прошедшем quis- — из лат. quaesīvī. Английское «query» — дальний родственник.',
- exs:[
-   {pt:'Dei o meu lugar a uma senhora de 40 anos.', ru:'Уступил место «молодой» даме сорока лет.'},
-   {pt:'Quis gritar mas o chefe estava ao lado.', ru:'Хотел закричать, но рядом стоял шеф.'},
-   {pt:'Deram-nos um quarto sem janela.', ru:'Нам дали комнату без окна.'},
- ],
- vs:[
-   {n:'dar',    r:'дать',   p:['dou','dás','dá','damos','dão'],           pt:['dei','deste','deu','demos','deram']},
-   {n:'querer', r:'хотеть', p:['quero','queres','quer','queremos','querem'],pt:['quis','quiseste','quis','quisemos','quiseram']},
- ]},
-
-{id:'alm', bg:'≈', nm:'«Почти правильные»', cl:'#367012',
- ds:'В настоящем — чередования гласных (o→u у dormir, e→i у pedir). Прошедшее полностью правильное. Выучи настоящее — прошедшее достанется бесплатно.',
- exs:[
-   {pt:'Dormi no comboio e passei a paragem.', ru:'Заснул в поезде и проехал остановку.'},
-   {pt:'Ouvi a conversa do vizinho sem querer.', ru:'Случайно услышал разговор соседа.'},
-   {pt:'Pedi a conta mas trouxeram mais vinho.', ru:'Попросил счёт, но принесли ещё вина.'},
- ],
- vs:[
-   {n:'dormir', r:'спать',    p:['durmo','dormes','dorme','dormimos','dormem'], pt:['dormi','dormiste','dormiu','dormimos','dormiram']},
-   {n:'ouvir',  r:'слышать',  p:['ouço','ouves','ouve','ouvimos','ouvem'],      pt:['ouvi','ouviste','ouviu','ouvimos','ouviram']},
-   {n:'pedir',  r:'просить',  p:['peço','pedes','pede','pedimos','pedem'],      pt:['pedi','pediste','pediu','pedimos','pediram']},
-   {n:'servir', r:'служить',  p:['sirvo','serves','serve','servimos','servem'], pt:['servi','serviste','serviu','servimos','serviram']},
-   {n:'perder', r:'терять',   p:['perco','perdes','perde','perdemos','perdem'], pt:['perdi','perdeste','perdeu','perdemos','perderam']},
-   {n:'ler',    r:'читать',   p:['leio','lês','lê','lemos','lêem'],             pt:['li','leste','leu','lemos','leram']},
-   {n:'sair',   r:'выйти',    p:['saio','sais','sai','saímos','saem'],          pt:['saí','saíste','saiu','saímos','saíram']},
- ]},
+const P=['eu','tu','ele/ela','nós','eles'];
+const F=[
+{id:'twins',bg:'≡',nm:'Близнецы: ir = ser',cl:'#E24B4A',
+ds:'В португальском «идти» (ir) и «быть» (ser) полностью совпадают в прошедшем: fui, foste, foi, fomos, foram. Ещё в народной латыни ire «позаимствовал» формы esse — своих форм просто не осталось. Только контекст скажет, что имеется в виду.',
+vs:[
+{n:'ir',r:'идти',p:['vou','vais','vai','vamos','vão'],pt:['fui','foste','foi','fomos','foram']},
+{n:'ser',r:'быть',p:['sou','és','é','somos','são'],pt:['fui','foste','foi','fomos','foram']},
+]},
+{id:'ive',bg:'iv',nm:'Семья -ive',cl:'#378ADD',
+ds:'tive и estive — двоюродные братья из латинского «сильного» перфекта: tenui→tive, steti→estive. vir выбивается формой vim, но родство сразу видно в vieste, viemos — та же -i- основа на месте.',
+vs:[
+{n:'ter',r:'иметь',p:['tenho','tens','tem','temos','têm'],pt:['tive','tiveste','teve','tivemos','tiveram']},
+{n:'estar',r:'находиться',p:['estou','estás','está','estamos','estão'],pt:['estive','estiveste','esteve','estivemos','estiveram']},
+{n:'vir',r:'прийти',p:['venho','vens','vem','vimos','vêm'],pt:['vim','vieste','veio','viemos','vieram']},
+]},
+{id:'uve',bg:'ou',nm:'Семья -uve / -ude / -ouve',cl:'#1D9E75',
+ds:'Основа -ou-/-u- — эхо латинского перфекта с суффиксом -u-: sapui→soube, potui→pude. Haver выжил почти только как houve («произошло»): houve um acidente. Во всех остальных лицах его давно вытеснил ter.',
+vs:[
+{n:'saber',r:'знать',p:['sei','sabes','sabe','sabemos','sabem'],pt:['soube','soubeste','soube','soubemos','souberam']},
+{n:'poder',r:'мочь',p:['posso','podes','pode','podemos','podem'],pt:['pude','pudeste','pôde','pudemos','puderam']},
+{n:'haver',r:'вспом.',p:['—','—','há','—','—'],pt:['—','—','houve','—','—']},
+]},
+{id:'str',bg:'S!',nm:'Сильный претерит',cl:'#7F77DD',
+ds:'Ударение на основе, основа меняется радикально — это «сильный» перфект латыни. fiz ← лат. fecī (c→z), disse ← dīxī (x→ss). trouxe и pus — архаичные сигматические основы, уцелевшие только в этих словах.',
+vs:[
+{n:'fazer',r:'делать',p:['faço','fazes','faz','fazemos','fazem'],pt:['fiz','fizeste','fez','fizemos','fizeram']},
+{n:'dizer',r:'говорить',p:['digo','dizes','diz','dizemos','dizem'],pt:['disse','disseste','disse','dissemos','disseram']},
+{n:'trazer',r:'нести',p:['trago','trazes','traz','trazemos','trazem'],pt:['trouxe','trouxeste','trouxe','trouxemos','trouxeram']},
+{n:'pôr',r:'класть',p:['ponho','pões','põe','pomos','põem'],pt:['pus','puseste','pôs','pusemos','puseram']},
+]},
+{id:'reb',bg:'R',nm:'Особняки',cl:'#BA7517',
+ds:'dar — короткий -ar глагол, но претерит взят у -ir/-er: dei, deste, deu, — латинское dare спрягалось нестандартно ещё в античности. querer: основа quis- из лат. quaesīvī (я искал). Кстати, query (запрос) по-английски — дальний родственник.',
+vs:[
+{n:'dar',r:'дать',p:['dou','dás','dá','damos','dão'],pt:['dei','deste','deu','demos','deram']},
+{n:'querer',r:'хотеть',p:['quero','queres','quer','queremos','querem'],pt:['quis','quiseste','quis','quisemos','quiseram']},
+]},
+{id:'alm',bg:'≈',nm:'«Почти правильные»',cl:'#3D8116',
+ds:'В настоящем — чередования гласных (o→u у dormir, e→i у pedir/servir, ouço у ouvir), но прошедшее абсолютно правильное по типу -er/-ir. Достаточно выучить форму настоящего — прошедшее достанется бесплатно.',
+vs:[
+{n:'dormir',r:'спать',p:['durmo','dormes','dorme','dormimos','dormem'],pt:['dormi','dormiste','dormiu','dormimos','dormiram']},
+{n:'ouvir',r:'слышать',p:['ouço','ouves','ouve','ouvimos','ouvem'],pt:['ouvi','ouviste','ouviu','ouvimos','ouviram']},
+{n:'pedir',r:'просить',p:['peço','pedes','pede','pedimos','pedem'],pt:['pedi','pediste','pediu','pedimos','pediram']},
+{n:'servir',r:'служить',p:['sirvo','serves','serve','servimos','servem'],pt:['servi','serviste','serviu','servimos','serviram']},
+{n:'subir',r:'подняться',p:['subo','sobes','sobe','subimos','sobem'],pt:['subi','subiste','subiu','subimos','subiram']},
+{n:'perder',r:'терять',p:['perco','perdes','perde','perdemos','perdem'],pt:['perdi','perdeste','perdeu','perdemos','perderam']},
+{n:'ler',r:'читать',p:['leio','lês','lê','lemos','lêem'],pt:['li','leste','leu','lemos','leram']},
+{n:'sair',r:'выйти',p:['saio','sais','sai','saímos','saem'],pt:['saí','saíste','saiu','saímos','saíram']},
+]},
 ];
 
-const S = {};
-F.forEach(f => S[f.id] = {hc: new Set(), ht: new Set(), rv: new Set()});
+const S={};
+F.forEach(f=>S[f.id]={hc:new Set(),ht:new Set(),rv:new Set()});
 
-function rc(f) {
-  const s = S[f.id];
-  const vt = ['presente','pretérito'].filter(t => !s.ht.has(t));
-  const ah = s.hc.size > 0 || s.ht.size > 0;
+function rc(f){
+const s=S[f.id];
+const vt=['presente','pretérito'].filter(t=>!s.ht.has(t));
+const ah=s.hc.size>0||s.ht.size>0;
 
-  const pb = P.map((p,i) => {
-    const h = s.hc.has(i);
-    return `<button class="tb" style="background:${h?f.cl:'transparent'};color:${h?'#fff':f.cl};border-color:${f.cl}" onclick="tc('${f.id}',${i})">${p}</button>`;
-  }).join('');
+const pb=P.map((p,i)=>{
+const h=s.hc.has(i);
+return`<button class="tb" style="background:${h?f.cl:'transparent'};color:${h?'#fff':f.cl};border-color:${f.cl}" onclick="tc('${f.id}',${i})">${h?'<i class="ti ti-lock" aria-hidden="true" style="font-size:10px;margin-right:2px"></i>':''}${p}</button>`;
+}).join('');
 
-  const TLBL = {'presente':'настоящее','pretérito':'прошедшее'};
-  const tb = ['presente','pretérito'].map(t => {
-    const h = s.ht.has(t);
-    return `<button class="tb" style="background:${h?'var(--color-text-tertiary)':'transparent'};color:${h?'var(--color-background-primary)':'var(--color-text-secondary)'};border-color:var(--color-border-secondary)" onclick="tt('${f.id}','${t}')">${TLBL[t]}</button>`;
-  }).join('');
+const tb=['presente','pretérito'].map(t=>{
+const h=s.ht.has(t);
+return`<button class="tb" style="background:${h?'var(--color-text-tertiary)':'transparent'};color:${h?'var(--color-background-primary)':'var(--color-text-secondary)'};border-color:var(--color-border-secondary)" onclick="tt('${f.id}','${t}')">${h?'<i class="ti ti-eye-off" aria-hidden="true" style="font-size:10px;margin-right:2px"></i>':''}${t}</button>`;
+}).join('');
 
-  const trs = f.vs.map((v,vi) => {
-    if (vt.length === 0) return `<tr><td colspan="${2+P.length}" style="text-align:center;padding:12px;font-size:12px;color:var(--color-text-tertiary)">— оба времени скрыты —</td></tr>`;
-    return vt.map((t,ti) => {
-      const ip = t === 'pretérito';
-      const rb = vi%2===0 ? (ip ? f.cl+'0C':'transparent') : (ip ? f.cl+'18':f.cl+'07');
-      const vc = ti === 0 ? `<td rowspan="${vt.length}" style="padding:10px 14px;border-right:0.5px solid var(--color-border-tertiary);vertical-align:middle;width:90px;height:42px"><span style="font-weight:600;color:${f.cl};font-size:15px;display:block">${v.n}</span><span style="font-size:12px;color:#555;font-weight:500">${v.r}</span></td>` : '';
-      const tl = `<td style="padding:8px 10px;font-size:11px;font-weight:${ip?'500':'400'};color:${ip?f.cl:'var(--color-text-tertiary)'};white-space:nowrap;width:60px;height:42px">${ip?'прош.':'наст.'}</td>`;
-      const fcs = P.map((_,i) => {
-        const fm = v[ip ? 'pt':'p'][i];
-        const ih = s.hc.has(i);
-        // fixed-width td
-        const tdw = `style="padding:8px 10px;width:110px;min-width:110px;height:42px;color:${fm==='—'?'var(--color-border-secondary)':'var(--color-text-primary)'};font-weight:${ip&&fm!=='—'?'600':'400'}"`;
-        const tdwh = `style="padding:0 8px;text-align:center;width:110px;min-width:110px;height:42px;background:${f.cl}09"`;
-        if (!ih) return `<td ${tdw}>${fm}</td>`;
-        if (fm === '—') return `<td ${tdwh}><span style="color:var(--color-border-tertiary)">—</span></td>`;
-        const ir = s.rv.has(`${v.n}:${t}:${i}`);
-        return `<td ${tdwh}><span class="cm" style="background:${ir?f.cl+'30':f.cl};color:${ir?f.cl:'transparent'}" onclick="rv_('${f.id}','${v.n}:${t}:${i}')">${fm}</span></td>`;
-      }).join('');
-      const bb = ip && ti===vt.length-1 ? `1px solid ${f.cl}35` : `0.5px solid var(--color-border-tertiary)`;
-      return `<tr style="background:${rb};border-bottom:${bb}">${vc}${tl}${fcs}</tr>`;
-    }).join('');
-  }).join('');
+const trs=f.vs.map((v,vi)=>{
+if(vt.length===0)return`<tr><td colspan="${2+P.length}" style="text-align:center;padding:12px;font-size:12px;color:var(--color-text-tertiary)">— оба времени скрыты —</td></tr>`;
+return vt.map((t,ti)=>{
+const ip=t==='pretérito';
+const rb=vi%2===0?(ip?f.cl+'0C':'transparent'):(ip?f.cl+'18':f.cl+'07');
+const vc=ti===0?`<td rowspan="${vt.length}" style="padding:10px 14px;border-right:0.5px solid var(--color-border-tertiary);vertical-align:middle;min-width:85px"><span style="font-weight:500;color:${f.cl};font-size:15px;display:block">${v.n}</span><span style="font-size:11px;color:var(--color-text-tertiary)">${v.r}</span></td>`:'';
+const tl=`<td style="padding:8px 10px;font-size:11px;font-weight:${ip?'500':'400'};color:${ip?f.cl:'var(--color-text-tertiary)'};white-space:nowrap">${ip?'★ прош.':'наст.'}</td>`;
+const fcs=P.map((_,i)=>{
+const fm=v[ip?'pt':'p'][i];
+const ih=s.hc.has(i);
+if(!ih)return`<td style="padding:8px 12px;color:${fm==='—'?'var(--color-border-secondary)':'var(--color-text-primary)'};font-weight:${ip&&fm!=='—'?'500':'400'}">${fm}</td>`;
+if(fm==='—')return`<td style="padding:8px 12px;text-align:center;color:var(--color-border-tertiary)">—</td>`;
+const ir=s.rv.has(`${v.n}:${t}:${i}`);
+return`<td style="padding:6px 8px;text-align:center;background:${f.cl}09"><span class="cm" style="background:${ir?f.cl+'25':f.cl};color:${ir?f.cl:'transparent'}" onclick="rv_('${f.id}','${v.n}:${t}:${i}')">${fm}</span></td>`;
+}).join('');
+const bb=ip&&ti===vt.length-1?`1px solid ${f.cl}35`:`0.5px solid var(--color-border-tertiary)`;
+return`<tr style="background:${rb};border-bottom:${bb}">${vc}${tl}${fcs}</tr>`;
+}).join('');
+}).join('');
 
-  const phs = P.map((p,i) => {
-    const h = s.hc.has(i);
-    return `<th style="padding:7px 12px;text-align:left;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;width:110px;min-width:110px;color:${h?'#bbb':f.cl};background:#fff" onclick="tc('${f.id}',${i})">${h?'···':p}</th>`;
-  }).join('');
+const phs=P.map((p,i)=>{
+const h=s.hc.has(i);
+return`<th style="padding:7px 12px;text-align:left;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;color:${h?'var(--color-text-tertiary)':f.cl};background:${h?'var(--color-background-secondary)':f.cl+'12'}" onclick="tc('${f.id}',${i})">${h?'?':p}</th>`;
+}).join('');
 
-  // examples panel
-  const exPanel = `<div class="verb-exs">
-    ${f.exs.map(e=>`<div class="verb-ex"><div class="vpt">${e.pt}</div><div class="vru">${e.ru}</div></div>`).join('')}
-  </div>`;
-
-  const card = `<div class="fc">
-    <div style="padding:14px 18px;background:#fff;border-left:4px solid ${f.cl};border-bottom:0.5px solid var(--color-border-tertiary)">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
-        <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:${f.cl};color:#fff;font-size:11px;font-weight:600;flex-shrink:0">${f.bg}</span>
-        <span style="font-size:16px;font-weight:600;color:${f.cl}">${f.nm}</span>
-      </div>
-      <p style="margin:0;font-size:13px;color:var(--color-text-secondary);line-height:1.6;font-style:italic">${f.ds}</p>
-    </div>
-    <div style="padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;border-bottom:0.5px solid var(--color-border-tertiary)">
-      <span style="font-size:11px;color:var(--color-text-tertiary);font-weight:500;letter-spacing:.5px;margin-right:2px">лицо:</span>${pb}
-      <span style="width:1px;height:16px;background:var(--color-border-secondary);margin:0 4px;flex-shrink:0"></span>
-      <span style="font-size:11px;color:var(--color-text-tertiary);font-weight:500;letter-spacing:.5px;margin-right:2px">время:</span>${tb}
-      <span style="flex:1"></span>
-      ${ah?`<button class="rb" onclick="rs_('${f.id}')">↺ показать всё</button>`:''}
-    </div>
-    <div style="overflow-x:auto">
-      <table style="width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed">
-        <thead><tr style="border-bottom:1px solid ${f.cl}40">
-          <th style="padding:7px 14px;text-align:left;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--color-text-secondary);border-right:0.5px solid var(--color-border-tertiary);width:90px;background:#fff">глагол</th>
-          <th style="padding:7px 10px;text-align:left;font-size:11px;color:var(--color-text-tertiary);font-weight:400;width:60px;background:#fff">↕</th>
-          ${phs}
-        </tr></thead>
-        <tbody>${trs}</tbody>
-      </table>
-    </div>
-  </div>`;
-
-  return `<div class="verb-row">${card}${exPanel}</div>`;
+return`<div class="fc">
+<div style="padding:16px 20px;background:var(--color-background-secondary);border-left:4px solid ${f.cl};border-radius:0;border-bottom:0.5px solid var(--color-border-tertiary)">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:7px">
+<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:${f.cl};color:#fff;font-size:11px;font-weight:500;flex-shrink:0;letter-spacing:-0.5px">${f.bg}</span>
+<span style="font-size:17px;font-weight:500;color:${f.cl}">${f.nm}</span>
+</div>
+<p style="margin:0;font-size:13px;color:var(--color-text-secondary);line-height:1.65;font-style:italic">${f.ds}</p>
+</div>
+<div style="padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;border-bottom:0.5px solid var(--color-border-tertiary)">
+<span style="font-size:11px;color:var(--color-text-tertiary);font-weight:500;letter-spacing:.5px;margin-right:1px">лицо:</span>
+${pb}
+<span style="width:0.5px;height:18px;background:var(--color-border-secondary);margin:0 4px;flex-shrink:0"></span>
+<span style="font-size:11px;color:var(--color-text-tertiary);font-weight:500;letter-spacing:.5px;margin-right:1px">время:</span>
+${tb}
+<span style="flex:1"></span>
+${ah?`<button class="rb" onclick="rs_('${f.id}')">↺ показать всё</button>`:''}
+</div>
+<div style="overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;min-width:480px;font-size:14px">
+<thead><tr style="border-bottom:1px solid ${f.cl}40">
+<th style="padding:7px 14px;text-align:left;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--color-text-secondary);border-right:0.5px solid var(--color-border-tertiary)">глагол</th>
+<th style="padding:7px 10px;text-align:left;font-size:11px;color:var(--color-text-tertiary);font-weight:400">↕</th>
+${phs}
+</tr></thead>
+<tbody>${trs}</tbody>
+</table>
+</div>
+</div>`;
 }
 
-function ra() { document.getElementById('fams').innerHTML = F.map(rc).join(''); }
-function tc(id,i) { const s=S[id]; s.hc.has(i)?s.hc.delete(i):s.hc.add(i); for(const k of[...s.rv])if(k.endsWith(':'+i))s.rv.delete(k); ra(); }
-function tt(id,t) { const s=S[id]; s.ht.has(t)?s.ht.delete(t):s.ht.add(t); ra(); }
-function rv_(id,k) { const s=S[id]; s.rv.has(k)?s.rv.delete(k):s.rv.add(k); ra(); }
-function rs_(id) { S[id]={hc:new Set(),ht:new Set(),rv:new Set()}; ra(); }
+function ra(){document.getElementById('fams').innerHTML=F.map(rc).join('')}
+function tc(id,i){const s=S[id];s.hc.has(i)?s.hc.delete(i):s.hc.add(i);for(const k of[...s.rv])if(k.endsWith(':'+i))s.rv.delete(k);ra()}
+function tt(id,t){const s=S[id];s.ht.has(t)?s.ht.delete(t):s.ht.add(t);ra()}
+function rv_(id,k){const s=S[id];s.rv.has(k)?s.rv.delete(k):s.rv.add(k);ra()}
+function rs_(id){S[id]={hc:new Set(),ht:new Set(),rv:new Set()};ra()}
 ra();
 </script>
-
-</body>
-</html>

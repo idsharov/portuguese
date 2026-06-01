@@ -101,13 +101,13 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 .pron-table tbody tr:hover td { background: #faf9f6; }
 
 .pt { font-size: 19px; font-weight: 700; color: #1a1a1a; font-family: 'Georgia', serif; }
-.pt-ico { font-size: 16px; margin-left: 5px; vertical-align: middle; line-height: 1; }
+.pt-ico { font-size: 16px; margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1; }
 .ru { color: #666; font-size: 15px; }
 .note { color: #aaa; font-size: 13px; font-style: italic; }
 
 /* gender — ONLY these two colors for gender */
-.m  { color: var(--m); vertical-align: middle; line-height: 1; }
-.f  { color: var(--f); vertical-align: middle; line-height: 1; }
+.m  { color: var(--m); display: inline-block; vertical-align: middle; line-height: 1; }
+.f  { color: var(--f); display: inline-block; vertical-align: middle; line-height: 1; }
 
 /* ── ARTICLE GRID ── */
 .art-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
@@ -891,6 +891,15 @@ function tt(id,t) { const s=S[id]; s.ht.has(t)?s.ht.delete(t):s.ht.add(t); ra();
 function rv_(id,k) { const s=S[id]; s.rv.has(k)?s.rv.delete(k):s.rv.add(k); ra(); }
 function rs_(id) { S[id]={hc:new Set(),ht:new Set(),rv:new Set()}; ra(); }
 ra();
+</script>
+
+<script>
+// Force ♂/♀ to render as text glyphs, not emoji (prevents vertical overflow on mobile)
+document.querySelectorAll('.m, .f, .pt-ico').forEach(el => {
+  el.childNodes.forEach(n => {
+    if (n.nodeType === 3) n.textContent = n.textContent.replace(/[♂♀]/g, m => m + '︎');
+  });
+});
 </script>
 
 </body>

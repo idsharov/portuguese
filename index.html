@@ -203,7 +203,7 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 .verb-exs-title { display: none; }
 .verb-ex { margin-bottom: 12px; }
 .verb-ex:last-child { margin-bottom: 0; }
-.verb-ex .vpt { font-family: 'Georgia', serif; font-size: 14px; color: #1a1a1a; line-height: 1.4; }
+.verb-ex .vpt { font-family: 'Georgia', serif; font-size: 15px; color: #1a1a1a; line-height: 1.4; }
 .verb-ex .vru { font-size: 13px; color: #777; line-height: 1.4; }
 
 /* ── RESPONSIVE: TABLET ── */
@@ -263,12 +263,12 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
   .obj-table { font-size: 14px; }
   .obj-table td, .obj-table th { padding: 9px 8px; }
   .pt-sm { font-size: 16px; }
-  .ex .pt { font-size: 14px; }
-  .ex .ru { font-size: 12px; }
+  .ex .pt { font-size: 17px; }
+  .ex .ru { font-size: 15px; }
   /* verbs */
   .tb { font-size: 11px; padding: 3px 10px; }
-  .verb-ex .vpt { font-size: 13px; }
-  .verb-ex .vru { font-size: 12px; }
+  .verb-ex .vpt { font-size: 17px; }
+  .verb-ex .vru { font-size: 15px; }
 }
 
 /* ── RESPONSIVE: TINY PHONE ── */
@@ -826,14 +826,14 @@ function rc(f) {
     if (vt.length === 0) return `<tr><td colspan="${2+P.length}" style="text-align:center;padding:12px;font-size:12px;color:var(--color-text-tertiary)">— оба времени скрыты —</td></tr>`;
     return vt.map((t,ti) => {
       const ip = t === 'pretérito';
-      const rb = vi%2===0 ? (ip ? f.cl+'0C':'transparent') : (ip ? f.cl+'18':f.cl+'07');
+      const rb = ip ? f.cl+'18' : 'transparent';
       const vc = ti === 0 ? `<td rowspan="${vt.length}" style="padding:10px 14px;border-right:0.5px solid var(--color-border-tertiary);vertical-align:middle;width:90px;height:42px"><span style="font-weight:600;color:${f.cl};font-size:15px;display:block">${v.n}</span><span style="font-size:12px;color:#555;font-weight:500">${v.r}</span></td>` : '';
       const tl = `<td style="padding:8px 10px;font-size:11px;font-weight:${ip?'500':'400'};color:${ip?f.cl:'var(--color-text-tertiary)'};white-space:nowrap;width:60px;height:42px">${ip?'прош.':'наст.'}</td>`;
       const fcs = P.map((_,i) => {
         const fm = v[ip ? 'pt':'p'][i];
         const ih = s.hc.has(i);
         // fixed-width td
-        const tdw = `style="padding:8px 10px;width:110px;min-width:110px;height:42px;color:${fm==='—'?'var(--color-border-secondary)':'var(--color-text-primary)'};font-weight:${ip&&fm!=='—'?'600':'400'}"`;
+        const tdw = `style="padding:8px 10px;width:110px;min-width:110px;height:42px;color:${fm==='—'?'var(--color-border-secondary)':'var(--color-text-primary)'};font-weight:400"`;
         const tdwh = `style="padding:0 8px;text-align:center;width:110px;min-width:110px;height:42px;background:${f.cl}09"`;
         if (!ih) return `<td ${tdw}>${fm}</td>`;
         if (fm === '—') return `<td ${tdwh}><span style="color:var(--color-border-tertiary)">—</span></td>`;
@@ -851,8 +851,8 @@ function rc(f) {
   }).join('');
 
   // examples panel
-  const exPanel = `<div class="verb-exs">
-    ${f.exs.map(e=>`<div class="verb-ex"><div class="vpt">${e.pt}</div><div class="vru">${e.ru}</div></div>`).join('')}
+  const exPanel = `<div class="ex-list">
+    ${f.exs.map(e=>`<div class="ex"><span class="pt">${e.pt}</span><span class="ru">${e.ru}</span></div>`).join('')}
   </div>`;
 
   const card = `<div class="fc">

@@ -79,7 +79,7 @@ main { margin-left: var(--nav-w); padding: 56px 48px 120px; max-width: calc(var(
 .section { padding-top: 80px; margin-top: -40px; }
 .section-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #999; margin-bottom: 8px; }
 h2 { font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
-.section-sub { font-size: 16px; color: #666; margin-bottom: 24px; }
+.section-sub { font-size: 16px; color: #666; margin-bottom: 24px; max-width: calc(100% - 288px); }
 hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 
 /* ── TWO-COL LAYOUT ── */
@@ -103,7 +103,7 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 .pt { font-size: 19px; font-weight: 700; color: #1a1a1a; font-family: 'Georgia', serif; }
 .pt-ico { font-size: 16px; margin-left: 5px; display: inline-block; vertical-align: middle; line-height: 1; }
 .ru { color: #666; font-size: 15px; }
-.note { color: #aaa; font-size: 13px; font-style: italic; }
+.note { color: #555; font-size: 14px; }
 
 /* gender — ONLY these two colors for gender */
 .m  { color: var(--m); display: inline-block; vertical-align: middle; line-height: 1; }
@@ -330,10 +330,8 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
   <div class="nav-course">Португальский A2</div>
   <div class="nav-block-label">CIPLE  Шпаргалки</div>
   <div class="nav-group">Блок 1</div>
-  <a href="#personal">Личные местоимения</a>
-  <a href="#object">Объектные местоимения</a>
-  <a href="#articles">Артикли</a>
-  <a href="#contractions">Слияния предлогов</a>
+  <a href="#personal">Местоимения</a>
+  <a href="#articles">Артикли и слияния</a>
   <a href="#prep-pronouns">Предлоги + местоимения</a>
   <div class="nav-group">Глаголы</div>
   <a href="#verbs">Неправильные глаголы</a>
@@ -354,121 +352,67 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 
 <!-- 1. ЛИЧНЫЕ МЕСТОИМЕНИЯ -->
 <section class="section" id="personal">
-  <div class="section-label">Блок 1  Раздел 1</div>
-  <h2>Личные местоимения</h2>
-  <p class="section-sub">Кто выполняет действие — подлежащее предложения.</p>
+  <div class="section-label">Блок 1 · Раздел 1</div>
+  <h2>Местоимения</h2>
+  <p class="section-sub">Подлежащее, прямое и косвенное дополнение, форма после предлога — все четыре столбца в одной таблице.</p>
 
   <div class="two-col">
     <div class="col-main">
       <div class="table-card tbl-scroll">
-        <table class="pron-table">
+        <table style="width:100%;border-collapse:collapse;min-width:520px">
           <thead>
-            <tr><th>Лицо</th><th>Единственное</th><th>Перевод</th><th>Множественное</th><th>Перевод</th></tr>
+            <tr style="border-bottom:2px solid #ddd">
+              <th style="padding:9px 12px;text-align:left;font-size:12px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.5px;width:60px">Лицо</th>
+              <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.5px">Подлежащее<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">кто?</span></th>
+              <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.5px">Прямое доп.<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">кого / что?</span></th>
+              <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.5px">Косв. доп.<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">кому?</span></th>
+              <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.5px">После предлога<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">de…, para…</span></th>
+            </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="ru">1-е</td>
-              <td><span class="pt">eu</span><span class="pt-ico">👨</span></td>
-              <td class="ru">я</td>
-              <td><span class="pt">nós</span><span class="pt-ico">👨👨</span></td>
-              <td class="ru">мы</td>
+            <tr style="border-bottom:.5px solid #eee">
+              <td style="padding:9px 12px;font-size:11px;color:#888;font-weight:600;white-space:nowrap">1 ед.</td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">eu</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">я</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">me</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">меня</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">me</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">мне</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">mim</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">мне</span></td>
+            </tr>
+            <tr style="border-bottom:.5px solid #eee;background:#fafafa">
+              <td style="padding:9px 12px;font-size:11px;color:#888;font-weight:600;white-space:nowrap">2 ед.</td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">tu</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">ты</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">te</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">тебя</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">te</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">тебе</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">ti</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">тобой</span></td>
+            </tr>
+            <tr style="border-bottom:.5px solid #eee">
+              <td style="padding:9px 12px;font-size:11px;color:#888;font-weight:600;white-space:nowrap">2 вежл.</td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">você</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вы / ты</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">o</span><span style="color:#ccc;margin:0 3px">/</span><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">a</span></span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вас</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">lhe</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вам</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">você</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вас</span></td>
+            </tr>
+            <tr style="border-bottom:.5px solid #eee;background:#fafafa">
+              <td style="padding:9px 12px;font-size:11px;color:#888;font-weight:600;white-space:nowrap">3 ед.</td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">ele</span><span style="color:#ccc;margin:0 3px">/</span><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">ela</span></span><span style="display:block;font-size:13px;color:#666;margin-top:3px">он / она</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">o</span><span style="color:#ccc;margin:0 3px">/</span><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">a</span></span><span style="display:block;font-size:13px;color:#666;margin-top:3px">его / её</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">lhe</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">ему / ей</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">ele</span><span style="color:#ccc;margin:0 3px">/</span><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">ela</span></span><span style="display:block;font-size:13px;color:#666;margin-top:3px">него / неё</span></td>
+            </tr>
+            <tr style="border-bottom:1.5px solid #ddd">
+              <td style="padding:9px 12px;font-size:11px;color:#888;font-weight:600;white-space:nowrap">3 возвр.</td>
+              <td style="padding:9px 8px;text-align:center;color:#ccc;font-size:18px">—</td>
+              <td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">se</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">себя</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">se</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">себе</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">si</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">собой</span></td>
+            </tr>
+            <tr style="border-bottom:.5px solid #eee">
+              <td style="padding:9px 12px;font-size:11px;color:#888;font-weight:600;white-space:nowrap">1 мн.</td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">nós</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">мы</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">nos</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">нас</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">nos</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">нам</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">nós</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">нас</span></td>
+            </tr>
+            <tr style="border-bottom:.5px solid #eee;background:#fafafa;opacity:.4">
+              <td style="padding:9px 12px;font-size:11px;color:#888;font-weight:600;white-space:nowrap">2 мн. †</td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">vós</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вы</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">vos</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вас</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">vos</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вам</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">vós</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вас</span></td>
             </tr>
             <tr>
-              <td class="ru">2-е</td>
-              <td><span class="pt">tu</span><span class="pt-ico">👩</span></td>
-              <td class="ru">ты</td>
-              <td><span class="pt">vocês</span><span class="pt-ico">👩👩</span></td>
-              <td class="ru">вы</td>
-            </tr>
-            <tr>
-              <td class="ru">3-е</td>
-              <td><span class="pt">ele</span><span class="pt-ico m">♂</span></td>
-              <td class="ru">он</td>
-              <td><span class="pt">eles</span><span class="pt-ico m">♂♂</span></td>
-              <td class="ru">они</td>
-            </tr>
-            <tr>
-              <td class="ru">3-е</td>
-              <td><span class="pt">ela</span><span class="pt-ico f">♀</span></td>
-              <td class="ru">она</td>
-              <td><span class="pt">elas</span><span class="pt-ico f">♀♀</span></td>
-              <td class="ru">они</td>
+              <td style="padding:9px 12px;font-size:11px;color:#888;font-weight:600;white-space:nowrap">3 мн.</td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">eles</span><span style="color:#ccc;margin:0 3px">/</span><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">elas</span></span><span style="display:block;font-size:13px;color:#666;margin-top:3px">они</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">os</span><span style="color:#ccc;margin:0 3px">/</span><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">as</span></span><span style="display:block;font-size:13px;color:#666;margin-top:3px">их</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block;font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">lhes</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">им</span></td><td style="padding:9px 8px;text-align:center;white-space:nowrap"><span style="display:block"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">eles</span><span style="color:#ccc;margin:0 3px">/</span><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">elas</span></span><span style="display:block;font-size:13px;color:#666;margin-top:3px">них</span></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="note" style="margin-bottom:14px;"><em>vós</em> архаично, в живой речи не используется.</p>
-      <div class="funfact"><strong>eu</strong> — латинское <em>ego</em>. То же слово, что в психологии. Испанский: <em>yo</em>, французский: <em>je</em> — один корень.</div>
-      <div class="funfact"><strong>você</strong> сокращение от <em>Vossa Mercê</em> («Ваша Милость»). Поэтому при нём глагол стоит в 3-м лице: <em>você fala</em> (не <em>falas</em>).</div>
-      <div class="rule">Подлежащее часто опускают — окончание глагола уже показывает лицо.<br><span style="font-family:Georgia;font-size:17px;">Falo português.</span> <span style="color:#aaa;font-size:14px;">(«eu» не нужно)</span></div>
+      <p class="note" style="margin-bottom:14px">† <em>vós / vos</em> — архаично, в живой речи не используется. &nbsp;·&nbsp; Слияние: <em>lhe + o/a → lho/lha</em>, &nbsp;<em>lhes + os/as → lhos/lhas</em>.</p>
+      <div class="funfact"><strong>eu</strong> ← лат. <em>ego</em>. &nbsp;<strong>você</strong> ← <em>Vossa Mercê</em> («Ваша Милость»): исторически 3-е лицо, поэтому глагол в 3-м лице — <em>você fala</em>, а не <em>falas</em>. &nbsp;<strong>mim / ti</strong> — предложные формы: <em>para mim</em>, <em>para ti</em>. &nbsp;<strong>comigo / contigo / consigo</strong> — слияние <em>com</em> + местоимение.</div>
+      <div class="rule"><strong>Клитика ПОСЛЕ глагола</strong> (энклизис) — норма европейского португальского.<br><span style="font-family:Georgia;font-size:16px">Vejo-<strong>o</strong>. &nbsp; Dou-<strong>lhe</strong> o livro. &nbsp; Chama-<strong>me</strong>.</span><br><span style="font-size:13px;color:#888;display:block;margin-top:5px">После <em>não</em>, <em>que</em>, <em>se</em> — ДО глагола: <em>Não <strong>me</strong> digas!</em></span></div>
+      <div class="funfact">Энклизис — норма классической латыни. Бразильский сдвинул клитику вперёд: <em>Vejo-o</em> — Европа, <em>Eu o vejo</em> — Бразилия.</div>
     </div>
     <div class="col-examples">
       <div class="ex-list">
         <div class="ex"><span class="pt">Ela trabalha em Lisboa.</span><span class="ru">Она работает в Лиссабоне.</span></div>
-        <div class="ex"><span class="pt">Eles chegam amanhã.</span><span class="ru">Они приезжают завтра.</span></div>
-        <div class="ex"><span class="pt">Vocês falam inglês?</span><span class="ru">Вы говорите по-английски?</span></div>
-        <div class="ex"><span class="pt">Falo, logo existo.</span><span class="ru">Говорю — значит, существую.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- 2. ОБЪЕКТНЫЕ МЕСТОИМЕНИЯ -->
-<section class="section" id="object">
-  <div class="section-label">Блок 1  Раздел 2</div>
-  <h2>Объектные местоимения</h2>
-  <p class="section-sub">Когда существительное уже известно — его заменяют местоимением. Прямое: кого/что. Косвенное: кому/для кого.</p>
-
-  <div class="two-col">
-    <div class="col-main">
-      <div class="table-card tbl-scroll">
-        <table class="obj-table">
-          <thead>
-            <tr>
-              <th>Лицо</th>
-              <th class="col-d">Прямое <span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0">кого/что</span></th>
-              <th class="col-i">Косвенное <span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0">кому</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>eu 👨</td><td class="col-d"><span class="pt-sm">me</span></td><td class="col-i"><span class="pt-sm">me</span></td></tr>
-            <tr><td>tu 👩</td><td class="col-d"><span class="pt-sm">te</span></td><td class="col-i"><span class="pt-sm">te</span></td></tr>
-            <tr><td>ele <span class="m">♂</span></td><td class="col-d"><span class="pt-sm m">o</span></td><td class="col-i"><span class="pt-sm">lhe</span></td></tr>
-            <tr><td>ela <span class="f">♀</span></td><td class="col-d"><span class="pt-sm f">a</span></td><td class="col-i"><span class="pt-sm">lhe</span></td></tr>
-            <tr><td>nós 👨👨</td><td class="col-d"><span class="pt-sm">nos</span></td><td class="col-i"><span class="pt-sm">nos</span></td></tr>
-            <tr><td>eles <span class="m">♂♂</span></td><td class="col-d"><span class="pt-sm m">os</span></td><td class="col-i"><span class="pt-sm">lhes</span></td></tr>
-            <tr><td>elas <span class="f">♀♀</span></td><td class="col-d"><span class="pt-sm f">as</span></td><td class="col-i"><span class="pt-sm">lhes</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="funfact"><strong>lhe</strong> от латинского <em>illi</em> («тому»), того же корня что <em>ele/ela</em>.</div>
-      <div class="rule" style="margin-top:0;"><strong>Порядок: местоимение ПОСЛЕ глагола</strong> через дефис — норма европейского португальского.<br><span style="font-family:Georgia;font-size:16px;">Vejo-<strong>o</strong>.  Dou-<strong>lhe</strong> o livro.</span></div>
-      <div class="pos-grid">
-        <div class="pos-card">
-          <div class="pos-card-title">После não, que, se — ДО глагола</div>
-          <div class="pos-example">Não <strong>me</strong> digas!</div>
-          <div class="pos-trans" style="margin-bottom:10px;">Не говори мне!</div>
-          <div class="pos-example">Ela <strong>te</strong> ligou.</div>
-          <div class="pos-trans">Она тебе позвонила.</div>
-        </div>
-        <div class="pos-card">
-          <div class="pos-card-title">В остальных случаях — ПОСЛЕ</div>
-          <div class="pos-example">Vejo-<strong>o</strong>.</div>
-          <div class="pos-trans" style="margin-bottom:10px;">Я его вижу.</div>
-          <div class="pos-example">Dou-<strong>lhe</strong> o livro.</div>
-          <div class="pos-trans">Я даю ему книгу.</div>
-        </div>
-      </div>
-      <div class="funfact">Энклизис (местоимение после глагола) — норма классической латыни. Бразильский сдвинул вперёд под влиянием африканских языков. <em>Vejo-o</em> — Европа, <em>Eu o vejo</em> — Бразилия.</div>
-    </div>
-    <div class="col-examples">
-      <div class="ex-list">
-        <div class="ex"><span class="pt">Ele chama-<strong>me</strong>.</span><span class="ru">Он зовёт меня.</span></div>
-        <div class="ex"><span class="pt">Conheço-<strong>a</strong> bem.</span><span class="ru">Я её хорошо знаю.</span></div>
-        <div class="ex"><span class="pt">Não <strong>os</strong> vejo.</span><span class="ru">Я их не вижу.</span></div>
-        <div class="ex"><span class="pt">Diz-<strong>lhe</strong> a verdade.</span><span class="ru">Скажи ему правду.</span></div>
-        <div class="ex"><span class="pt">Deram-<strong>nos</strong> o mapa.</span><span class="ru">Нам дали карту.</span></div>
+        <div class="ex"><span class="pt">Conheço-a bem.</span><span class="ru">Я её хорошо знаю.</span></div>
+        <div class="ex"><span class="pt">Não me digas!</span><span class="ru">Не говори мне!</span></div>
+        <div class="ex"><span class="pt">Diz-lhe a verdade.</span><span class="ru">Скажи ему правду.</span></div>
+        <div class="ex"><span class="pt">Lavou-se antes do jantar.</span><span class="ru">Он помылся перед ужином.</span></div>
+        <div class="ex"><span class="pt">Para mim, um café.</span><span class="ru">Мне, пожалуйста, кофе.</span></div>
+        <div class="ex"><span class="pt">Falo português.</span><span class="ru">Говорю по-португальски. (eu опущено)</span></div>
       </div>
     </div>
   </div>
@@ -477,142 +421,109 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 
 <!-- 3. АРТИКЛИ -->
 <section class="section" id="articles">
-  <div class="section-label">Блок 1  Раздел 3</div>
-  <h2>Артикли</h2>
-  <p class="section-sub">Стоят перед существительным, согласуются в роде и числе.</p>
+  <div class="section-label">Блок 1 · Раздел 2</div>
+  <h2>Артикли и слияния</h2>
+  <p class="section-sub">Предлог + определённый артикль всегда сливаются в одно слово — раздельно ошибка.</p>
 
   <div class="two-col">
     <div class="col-main">
-      <div class="art-grid">
-        <div class="art-block">
-          <div class="art-block-title">Определённый — тот самый</div>
-          <div class="art-row">
-            <div class="art-cell masc"><span class="pt">o</span><span class="label"><span class="m">♂</span> муж. ед.  <em>o livro</em></span></div>
-            <div class="art-cell fem"><span class="pt">a</span><span class="label"><span class="f">♀</span> жен. ед.  <em>a casa</em></span></div>
-          </div>
-          <div class="art-row">
-            <div class="art-cell masc"><span class="pt">os</span><span class="label"><span class="m">♂♂</span> муж. мн.  <em>os livros</em></span></div>
-            <div class="art-cell fem"><span class="pt">as</span><span class="label"><span class="f">♀♀</span> жен. мн.  <em>as casas</em></span></div>
-          </div>
-        </div>
-        <div class="art-block">
-          <div class="art-block-title">Неопределённый — некий</div>
-          <div class="art-row">
-            <div class="art-cell masc"><span class="pt">um</span><span class="label"><span class="m">♂</span> муж. ед.  <em>um livro</em></span></div>
-            <div class="art-cell fem"><span class="pt">uma</span><span class="label"><span class="f">♀</span> жен. ед.  <em>uma casa</em></span></div>
-          </div>
-          <div class="art-row">
-            <div class="art-cell masc"><span class="pt">uns</span><span class="label"><span class="m">♂♂</span> муж. мн.  <em>uns livros</em></span></div>
-            <div class="art-cell fem"><span class="pt">umas</span><span class="label"><span class="f">♀♀</span> жен. мн.  <em>umas casas</em></span></div>
-          </div>
-        </div>
-      </div>
-      <div class="rule"><strong>Без артикля</strong> — профессия после <em>ser</em> и национальность:<br><span style="font-family:Georgia;font-size:17px;">Sou médico.  Sou russo.</span></div>
-      <div class="funfact">Артикли <strong>o/a</strong> — из латинского <em>ille/illa</em> («тот/та»). Тот же путь: испанский <em>el/la</em>, французский <em>le/la</em>, итальянский <em>il/la</em>. Английское «the» из германского <em>þe</em> — тоже указательное. Все европейские артикли когда-то были словом «тот».</div>
+      <div class="table-card tbl-scroll" style="margin-bottom:14px">
+  <table style="width:100%;border-collapse:collapse">
+    <thead>
+      <tr style="border-bottom:2px solid #ddd">
+        <th style="padding:9px 14px;text-align:left;width:130px"></th>
+        <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">муж. ед.</th>
+        <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">жен. ед.</th>
+        <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">муж. мн.</th>
+        <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">жен. мн.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:.5px solid #eee">
+        <td style="padding:12px 14px;font-size:13px;font-weight:600;color:#444;line-height:1.5;white-space:nowrap">Определённый<br><span style="font-weight:400;color:#999;font-size:12px">тот самый</span></td>
+        <td style="padding:13px 8px;text-align:center"><span style="display:block;font-size:22px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">o</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">тот</span><span style="display:block;font-size:12px;color:#bbb;margin-top:3px;font-style:italic">o livro</span></td>
+        <td style="padding:13px 8px;text-align:center"><span style="display:block;font-size:22px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">a</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">та</span><span style="display:block;font-size:12px;color:#bbb;margin-top:3px;font-style:italic">a casa</span></td>
+        <td style="padding:13px 8px;text-align:center"><span style="display:block;font-size:22px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">os</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">те</span><span style="display:block;font-size:12px;color:#bbb;margin-top:3px;font-style:italic">os livros</span></td>
+        <td style="padding:13px 8px;text-align:center"><span style="display:block;font-size:22px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">as</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">те</span><span style="display:block;font-size:12px;color:#bbb;margin-top:3px;font-style:italic">as casas</span></td>
+      </tr>
+      <tr>
+        <td style="padding:12px 14px;font-size:13px;font-weight:600;color:#444;line-height:1.5;white-space:nowrap">Неопределённый<br><span style="font-weight:400;color:#999;font-size:12px">некий</span></td>
+        <td style="padding:13px 8px;text-align:center"><span style="display:block;font-size:22px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">um</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">один, некий</span><span style="display:block;font-size:12px;color:#bbb;margin-top:3px;font-style:italic">um livro</span></td>
+        <td style="padding:13px 8px;text-align:center"><span style="display:block;font-size:22px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">uma</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">одна, некая</span><span style="display:block;font-size:12px;color:#bbb;margin-top:3px;font-style:italic">uma casa</span></td>
+        <td style="padding:13px 8px;text-align:center"><span style="display:block;font-size:22px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">uns</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">несколько</span><span style="display:block;font-size:12px;color:#bbb;margin-top:3px;font-style:italic">uns livros</span></td>
+        <td style="padding:13px 8px;text-align:center"><span style="display:block;font-size:22px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">umas</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">несколько</span><span style="display:block;font-size:12px;color:#bbb;margin-top:3px;font-style:italic">umas casas</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
     </div>
     <div class="col-examples">
       <div class="ex-list">
         <div class="ex"><span class="pt">O médico está aqui.</span><span class="ru">Врач (тот самый) здесь.</span></div>
         <div class="ex"><span class="pt">Preciso de um médico.</span><span class="ru">Мне нужен врач (любой).</span></div>
-        <div class="ex"><span class="pt">As lojas estão fechadas.</span><span class="ru">Магазины закрыты.</span></div>
-        <div class="ex"><span class="pt">Sou médico.</span><span class="ru">Я врач. (без артикля!)</span></div>
       </div>
     </div>
   </div>
-</section>
-
-
-<!-- 4. СЛИЯНИЯ ПРЕДЛОГОВ -->
-<section class="section" id="contractions">
-  <div class="section-label">Блок 1  Раздел 4</div>
-  <h2>Слияния предлогов с артиклями</h2>
-  <p class="section-sub">Предлог + артикль всегда сливаются в одно слово. Раздельно — ошибка.</p>
-
-  <!-- DE -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">de</span><span class="prep-meaning">от, из, о — принадлежность, происхождение</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="contr-grid">
-          <div class="contr-cell masc"><div class="result">do</div><div class="formula">de + o</div><div class="meaning"><span class="m">♂</span> муж. ед.</div></div>
-          <div class="contr-cell fem"><div class="result">da</div><div class="formula">de + a</div><div class="meaning"><span class="f">♀</span> жен. ед.</div></div>
-          <div class="contr-cell masc"><div class="result">dos</div><div class="formula">de + os</div><div class="meaning"><span class="m">♂♂</span> муж. мн.</div></div>
-          <div class="contr-cell fem"><div class="result">das</div><div class="formula">de + as</div><div class="meaning"><span class="f">♀♀</span> жен. мн.</div></div>
-        </div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">Sou <strong>do</strong> Porto.</span><span class="ru">Я из Порту. (de + o Porto)</span></div>
-          <div class="ex"><span class="pt">A chave <strong>da</strong> casa.</span><span class="ru">Ключ от дома. (de + a casa)</span></div>
-          <div class="ex"><span class="pt">O sabor <strong>dos</strong> pastéis.</span><span class="ru">Вкус пирожных.</span></div>
-        </div>
-      </div>
+  <p class="note" style="margin-bottom:8px;max-width:calc(100% - 288px)">Неопределённые артикли <em>um / umas</em> с предлогами не сливаются.</p>
+  <p style="margin:0 0 12px;font-size:13px;font-weight:600;color:#555;letter-spacing:.02em;max-width:calc(100% - 288px)">Слияния с определёнными артиклями</p>
+  <div class="two-col" style="margin-top:0">
+    <div class="col-main">
+      <div class="table-card tbl-scroll">
+  <table style="width:100%;border-collapse:collapse;min-width:440px">
+    <thead>
+      <tr>
+        <th style="padding:10px 14px;text-align:left;width:130px;border-bottom:2px solid #ddd"></th>
+        <th style="padding:10px 6px;text-align:center;font-weight:400;border-bottom:2px solid #ddd"><span style="display:block;font-size:15px;font-weight:700;font-family:Georgia,serif;color:#333">o</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">тот</span></th>
+        <th style="padding:10px 6px;text-align:center;font-weight:400;border-bottom:2px solid #ddd"><span style="display:block;font-size:15px;font-weight:700;font-family:Georgia,serif;color:#333">a</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">та</span></th>
+        <th style="padding:10px 6px;text-align:center;font-weight:400;border-bottom:2px solid #ddd"><span style="display:block;font-size:15px;font-weight:700;font-family:Georgia,serif;color:#333">os</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">те</span></th>
+        <th style="padding:10px 6px;text-align:center;font-weight:400;border-bottom:2px solid #ddd"><span style="display:block;font-size:15px;font-weight:700;font-family:Georgia,serif;color:#333">as</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">те</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:.5px solid #eee">
+        <td style="padding:12px 14px;white-space:nowrap;vertical-align:middle"><span style="display:inline-block;background:#444;color:#fff;border-radius:4px;padding:2px 9px;font-size:14px;font-weight:700;font-family:Georgia,serif">de</span><span style="display:block;font-size:13px;color:#666;margin-top:5px">из, от, о</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">do</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">de + o</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">da</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">de + a</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">dos</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">de + os</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">das</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">de + as</span></td>
+      </tr>
+      <tr style="border-bottom:.5px solid #eee;background:#fafafa">
+        <td style="padding:12px 14px;white-space:nowrap;vertical-align:middle"><span style="display:inline-block;background:#444;color:#fff;border-radius:4px;padding:2px 9px;font-size:14px;font-weight:700;font-family:Georgia,serif">em</span><span style="display:block;font-size:13px;color:#666;margin-top:5px">в, на</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">no</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">em + o</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">na</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">em + a</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">nos</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">em + os</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">nas</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">em + as</span></td>
+      </tr>
+      <tr style="border-bottom:.5px solid #eee">
+        <td style="padding:12px 14px;white-space:nowrap;vertical-align:middle"><span style="display:inline-block;background:#444;color:#fff;border-radius:4px;padding:2px 9px;font-size:14px;font-weight:700;font-family:Georgia,serif">a</span><span style="display:block;font-size:13px;color:#666;margin-top:5px">в, к — направление</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">ao</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">a + o</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">à</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">a + a</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">aos</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">a + os</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">às</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">a + as</span></td>
+      </tr>
+      <tr>
+        <td style="padding:12px 14px;white-space:nowrap;vertical-align:middle"><span style="display:inline-block;background:#444;color:#fff;border-radius:4px;padding:2px 9px;font-size:14px;font-weight:700;font-family:Georgia,serif">por</span><span style="display:block;font-size:13px;color:#666;margin-top:5px">по, через, за</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">pelo</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">por + o</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">pela</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">por + a</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">pelos</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">por + os</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:20px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">pelas</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">por + as</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+      <div class="funfact"><strong>o / a</strong> ← лат. <em>ille / illa</em> («тот / та»). Исп. <em>el/la</em>, фр. <em>le/la</em>, ит. <em>il/la</em> — один корень. &nbsp;<strong>em</strong> ← лат. <em>in</em> = англ. <em>in</em>.</div>
+      <div class="rule"><strong>Без артикля</strong> — профессия и национальность после <em>ser</em>:<br><span style="font-family:Georgia;font-size:17px">Sou médico. &nbsp; Sou russo.</span></div>
     </div>
-  </div>
-
-  <!-- EM -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">em</span><span class="prep-meaning">в, на — нахождение в месте</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="contr-grid">
-          <div class="contr-cell masc"><div class="result">no</div><div class="formula">em + o</div><div class="meaning"><span class="m">♂</span> муж. ед.</div></div>
-          <div class="contr-cell fem"><div class="result">na</div><div class="formula">em + a</div><div class="meaning"><span class="f">♀</span> жен. ед.</div></div>
-          <div class="contr-cell masc"><div class="result">nos</div><div class="formula">em + os</div><div class="meaning"><span class="m">♂♂</span> муж. мн.</div></div>
-          <div class="contr-cell fem"><div class="result">nas</div><div class="formula">em + as</div><div class="meaning"><span class="f">♀♀</span> жен. мн.</div></div>
-        </div>
-        <div class="funfact"><strong>em</strong> — латинское <em>in</em>, то же что английское «in». <em>No Porto</em> буквально = «in the Porto».</div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">Moro <strong>no</strong> centro.</span><span class="ru">Живу в центре. (em + o)</span></div>
-          <div class="ex"><span class="pt">Estou <strong>na</strong> cozinha.</span><span class="ru">Я на кухне. (em + a)</span></div>
-          <div class="ex"><span class="pt">Trabalho <strong>nas</strong> noites.</span><span class="ru">Работаю ночами.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- A -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">a</span><span class="prep-meaning">в, к — направление движения</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="contr-grid">
-          <div class="contr-cell masc"><div class="result">ao</div><div class="formula">a + o</div><div class="meaning"><span class="m">♂</span> муж. ед.</div></div>
-          <div class="contr-cell fem"><div class="result">à</div><div class="formula">a + a</div><div class="meaning"><span class="f">♀</span> жен. ед.</div></div>
-          <div class="contr-cell masc"><div class="result">aos</div><div class="formula">a + os</div><div class="meaning"><span class="m">♂♂</span> муж. мн.</div></div>
-          <div class="contr-cell fem"><div class="result">às</div><div class="formula">a + as</div><div class="meaning"><span class="f">♀♀</span> жен. мн.</div></div>
-        </div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">Vou <strong>ao</strong> mercado.</span><span class="ru">Иду на рынок. (a + o)</span></div>
-          <div class="ex"><span class="pt">Chego <strong>às</strong> nove.</span><span class="ru">Прихожу в девять. (a + as)</span></div>
-          <div class="ex"><span class="pt">Fui <strong>à</strong> farmácia.</span><span class="ru">Сходил в аптеку.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- POR -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">por</span><span class="prep-meaning">по, через, за</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="contr-grid">
-          <div class="contr-cell masc"><div class="result">pelo</div><div class="formula">por + o</div><div class="meaning"><span class="m">♂</span> муж. ед.</div></div>
-          <div class="contr-cell fem"><div class="result">pela</div><div class="formula">por + a</div><div class="meaning"><span class="f">♀</span> жен. ед.</div></div>
-          <div class="contr-cell masc"><div class="result">pelos</div><div class="formula">por + os</div><div class="meaning"><span class="m">♂♂</span> муж. мн.</div></div>
-          <div class="contr-cell fem"><div class="result">pelas</div><div class="formula">por + as</div><div class="meaning"><span class="f">♀♀</span> жен. мн.</div></div>
-        </div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">Passo <strong>pelo</strong> parque.</span><span class="ru">Прохожу через парк.</span></div>
-          <div class="ex"><span class="pt"><strong>Pela</strong> manhã tomo café.</span><span class="ru">По утрам пью кофе.</span></div>
-          <div class="ex"><span class="pt">Pago <strong>pelos</strong> erros.</span><span class="ru">Плачу за ошибки.</span></div>
-        </div>
+    <div class="col-examples">
+      <div class="ex-list">
+        <div class="ex"><span class="pt">Sou <strong>do</strong> Porto.</span><span class="ru">Я из Порту. (de + o)</span></div>
+        <div class="ex"><span class="pt">A chave <strong>da</strong> casa.</span><span class="ru">Ключ от дома. (de + a)</span></div>
+        <div class="ex"><span class="pt">Moro <strong>no</strong> centro.</span><span class="ru">Живу в центре. (em + o)</span></div>
+        <div class="ex"><span class="pt">Estou <strong>na</strong> cozinha.</span><span class="ru">Я на кухне. (em + a)</span></div>
+        <div class="ex"><span class="pt">Vou <strong>ao</strong> mercado.</span><span class="ru">Иду на рынок. (a + o)</span></div>
+        <div class="ex"><span class="pt">Chego <strong>às</strong> nove.</span><span class="ru">Прихожу в девять. (a + as)</span></div>
+        <div class="ex"><span class="pt"><strong>Pela</strong> manhã tomo café.</span><span class="ru">По утрам пью кофе. (por + a)</span></div>
+        <div class="ex"><span class="pt">Pago <strong>pelos</strong> erros.</span><span class="ru">Плачу за ошибки. (por + os)</span></div>
       </div>
     </div>
   </div>
@@ -623,94 +534,120 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 
 <!-- 5. ПРЕДЛОГИ + МЕСТОИМЕНИЯ -->
 <section class="section" id="prep-pronouns">
-  <div class="section-label">Блок 1  Раздел 5</div>
-  <h2>Предлоги + местоимения</h2>
-  <p class="section-sub">Те же предлоги сливаются не только с артиклями, но и с местоимениями.</p>
+  <div class="section-label">Блок 1 · Раздел 3</div>
+  <h2>Предлоги и клитики</h2>
+  <p class="section-sub">de и em всегда сливаются с местоимениями 3-го лица и указательными. Раздельно — ошибка.</p>
+  <p class="note" style="margin-top:-4px;margin-bottom:16px;max-width:calc(100% - 288px)"><strong>Клитика</strong> — безударное местоимение, которое «прилипает» к глаголу. В EP ставится после глагола через дефис: <em>dou-te</em> (даю тебе), <em>vejo-o</em> (вижу его).</p>
 
-  <!-- de/em + ele/ela -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">de / em</span><span class="prep-meaning">+ 3-е лицо (ele / ela / eles / elas)</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="contr-grid">
-          <div class="contr-cell masc"><div class="result">dele</div><div class="formula">de + ele</div><div class="meaning"><span class="m">♂</span> о нём</div></div>
-          <div class="contr-cell fem"><div class="result">dela</div><div class="formula">de + ela</div><div class="meaning"><span class="f">♀</span> о ней</div></div>
-          <div class="contr-cell masc"><div class="result">nele</div><div class="formula">em + ele</div><div class="meaning"><span class="m">♂</span> в нём</div></div>
-          <div class="contr-cell fem"><div class="result">nela</div><div class="formula">em + ela</div><div class="meaning"><span class="f">♀</span> в ней</div></div>
-        </div>
-        <div class="contr-grid" style="margin-top:8px;">
-          <div class="contr-cell masc"><div class="result">deles</div><div class="formula">de + eles</div><div class="meaning"><span class="m">♂♂</span> о них</div></div>
-          <div class="contr-cell fem"><div class="result">delas</div><div class="formula">de + elas</div><div class="meaning"><span class="f">♀♀</span> о них</div></div>
-          <div class="contr-cell masc"><div class="result">neles</div><div class="formula">em + eles</div><div class="meaning"><span class="m">♂♂</span> в них</div></div>
-          <div class="contr-cell fem"><div class="result">nelas</div><div class="formula">em + elas</div><div class="meaning"><span class="f">♀♀</span> в них</div></div>
-        </div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">A casa <strong>dele</strong> é bonita.</span><span class="ru">Его дом красивый.</span></div>
-          <div class="ex"><span class="pt">Gosto <strong>dela</strong>.</span><span class="ru">Она мне нравится.</span></div>
-          <div class="ex"><span class="pt">Confio <strong>nele</strong>.</span><span class="ru">Я ему доверяю.</span></div>
-          <div class="ex"><span class="pt">Penso <strong>nelas</strong> sempre.</span><span class="ru">Я всегда думаю о них.</span></div>
-        </div>
+  <div class="two-col">
+    <div class="col-main">
+      <div class="table-card tbl-scroll" style="margin-bottom:14px">
+  <table style="width:100%;border-collapse:collapse;min-width:520px">
+    <thead>
+      <tr style="border-bottom:2px solid #ddd">
+        <th style="padding:9px 14px;text-align:left;width:110px"></th>
+        <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">ele / ela<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">3 ед.</span></th>
+        <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">eles / elas<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">3 мн.</span></th>
+        <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">isto<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">это (здесь)</span></th>
+        <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">isso<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">то (там)</span></th>
+        <th style="padding:9px 10px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">aquilo<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">то (вон там)</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:.5px solid #eee">
+        <td style="padding:12px 14px;white-space:nowrap;vertical-align:middle"><span style="display:inline-block;background:#444;color:#fff;border-radius:4px;padding:2px 9px;font-size:14px;font-weight:700;font-family:Georgia,serif">de</span><span style="display:block;font-size:13px;color:#666;margin-top:5px">из, от, о</span></td>
+        <td style="padding:12px 8px;text-align:center;white-space:nowrap"><span style="display:block"><span style="font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">dele</span><span style="color:#ccc;margin:0 3px">/</span><span style="font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">dela</span></span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">de+ele / de+ela</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">его, о нём / её, о ней</span></td>
+        <td style="padding:12px 8px;text-align:center;white-space:nowrap"><span style="display:block"><span style="font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">deles</span><span style="color:#ccc;margin:0 3px">/</span><span style="font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">delas</span></span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">de+eles / de+elas</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">их, о них / их, о них</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">disto</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">de+isto</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">из этого</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">disso</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">de+isso</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">из того</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">daquilo</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">de+aquilo</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">из того вон</span></td>
+      </tr>
+      <tr>
+        <td style="padding:12px 14px;white-space:nowrap;vertical-align:middle"><span style="display:inline-block;background:#444;color:#fff;border-radius:4px;padding:2px 9px;font-size:14px;font-weight:700;font-family:Georgia,serif">em</span><span style="display:block;font-size:13px;color:#666;margin-top:5px">в, на</span></td>
+        <td style="padding:12px 8px;text-align:center;white-space:nowrap"><span style="display:block"><span style="font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">nele</span><span style="color:#ccc;margin:0 3px">/</span><span style="font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">nela</span></span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">em+ele / em+ela</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">в нём / в ней</span></td>
+        <td style="padding:12px 8px;text-align:center;white-space:nowrap"><span style="display:block"><span style="font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">neles</span><span style="color:#ccc;margin:0 3px">/</span><span style="font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">nelas</span></span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">em+eles / em+elas</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">в них / в них</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">nisto</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">em+isto</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">в этом</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">nisso</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">em+isso</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">в том</span></td>
+        <td style="padding:12px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">naquilo</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">em+aquilo</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">в том вон</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+      <p class="note" style="margin-bottom:12px"><strong>com ele / com ela / com eles / com elas</strong> — не сливается, пишется раздельно.</p>
+      <div class="table-card tbl-scroll">
+  <table style="width:100%;border-collapse:collapse">
+    <thead>
+      <tr style="border-bottom:2px solid #ddd">
+        <th style="padding:9px 14px;text-align:left;width:110px"></th>
+        <th style="padding:9px 12px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">mim<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">мне</span></th>
+        <th style="padding:9px 12px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">ti<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">тебе</span></th>
+        <th style="padding:9px 12px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">nós<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">нам</span></th>
+        <th style="padding:9px 12px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">vós †<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">вам</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:12px 14px;white-space:nowrap;vertical-align:middle"><span style="display:inline-block;background:#444;color:#fff;border-radius:4px;padding:2px 9px;font-size:14px;font-weight:700;font-family:Georgia,serif">com</span><span style="display:block;font-size:13px;color:#666;margin-top:5px">с, вместе с</span></td>
+        <td style="padding:12px 10px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">comigo</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">com + mim</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">со мной</span></td>
+        <td style="padding:12px 10px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">contigo</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">com + ti</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">с тобой</span></td>
+        <td style="padding:12px 10px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">connosco</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">com + nós</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">с нами</span></td>
+        <td style="padding:12px 10px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">convosco</span><span style="display:block;font-size:12px;color:#aaa;font-family:monospace;margin-top:3px">com + vós</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">с вами</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+      <div class="funfact"><strong>comigo / contigo / connosco</strong> ← лат. <em>mecum / tecum / nobiscum</em>: в латыни <em>cum</em> стоял после местоимения как суффикс. В португальском он перескочил вперёд и стал приставкой — поэтому <em>com + mim → comigo</em>, а не <em>commim</em>.</div>
+    </div>
+    <div class="col-examples">
+      <div class="ex-list">
+        <div class="ex"><span class="pt">A casa <strong>dele</strong> é bonita.</span><span class="ru">Его дом красивый.</span></div>
+        <div class="ex"><span class="pt">Gosto <strong>dela</strong>.</span><span class="ru">Она мне нравится.</span></div>
+        <div class="ex"><span class="pt">Confio <strong>nele</strong>.</span><span class="ru">Я ему доверяю.</span></div>
+        <div class="ex"><span class="pt">Penso <strong>nelas</strong> sempre.</span><span class="ru">Всегда думаю о них.</span></div>
+        <div class="ex"><span class="pt">Gosto <strong>disto</strong>.</span><span class="ru">Мне это нравится.</span></div>
+        <div class="ex"><span class="pt">Não fales <strong>nisso</strong>.</span><span class="ru">Не говори об этом.</span></div>
+        <div class="ex"><span class="pt">Vem <strong>comigo</strong>!</span><span class="ru">Иди со мной!</span></div>
+        <div class="ex"><span class="pt">Quero falar <strong>contigo</strong>.</span><span class="ru">Хочу с тобой поговорить.</span></div>
       </div>
     </div>
   </div>
 
-  <!-- de/em + demonstratives -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">de / em</span><span class="prep-meaning">+ указательные (isto / isso / aquilo)</span></div>
+  <div style="margin-top:28px;padding-top:22px;border-top:1px solid #eee">
+    <h3 style="font-size:17px;font-weight:600;color:#1a1a2e;margin:0 0 8px">Двойные клитики — IO + DO</h3>
+    <p style="font-size:14px;color:#555;line-height:1.65;margin:0 0 16px;max-width:calc(100% - 288px)">Когда глагол управляет <em>двумя</em> объектами — <strong>кому</strong> (IO, косвенное) и <strong>что</strong> (DO, прямое) — оба местоимения ставятся после глагола через дефис и сливаются в одну форму по таблице ниже. IO всегда стоит <em>первым</em>, DO — вторым. Строка <strong>lhes</strong> совпадает с <strong>lhe</strong>: перед прямым объектом <em>lhes</em> теряет -s.</p>
     <div class="two-col">
       <div class="col-main">
-        <div class="demo-grid">
-          <div class="demo-cell">
-            <div class="label">isto — это (здесь)</div>
-            <div class="forms">disto  nisto</div>
-            <div class="trans">из этого  в этом</div>
-          </div>
-          <div class="demo-cell">
-            <div class="label">isso — то (там, у тебя)</div>
-            <div class="forms">disso  nisso</div>
-            <div class="trans">из того  в том</div>
-          </div>
-          <div class="demo-cell">
-            <div class="label">aquilo — то (вон там)</div>
-            <div class="forms">daquilo  naquilo</div>
-            <div class="trans">из того  в том</div>
-          </div>
-        </div>
+        <div class="table-card tbl-scroll">
+  <table style="width:100%;border-collapse:collapse;min-width:380px">
+    <thead>
+      <tr style="border-bottom:2px solid #ddd">
+        <th style="padding:9px 12px;text-align:left;font-size:12px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.5px;width:90px">Кому</th>
+        <th style="padding:9px 8px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">o<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">его</span></th>
+        <th style="padding:9px 8px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">a<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">её</span></th>
+        <th style="padding:9px 8px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">os<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">их</span></th>
+        <th style="padding:9px 8px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#444">as<br><span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;color:#999">их</span></th>
+      </tr>
+    </thead>
+    <tbody>
+<tr style="border-bottom:.5px solid #eee"><td style="padding:10px 12px;white-space:nowrap;vertical-align:middle"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">me</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">мне</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">mo</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">мне его</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">ma</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">мне её</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">mos</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">мне их</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">mas</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">мне их</span></td></tr>
+<tr style="background:#fafafa;border-bottom:.5px solid #eee"><td style="padding:10px 12px;white-space:nowrap;vertical-align:middle"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">te</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">тебе</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">to</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">тебе его</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">ta</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">тебе её</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">tos</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">тебе их</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">tas</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">тебе их</span></td></tr>
+<tr style="border-bottom:.5px solid #eee"><td style="padding:10px 12px;white-space:nowrap;vertical-align:middle"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">lhe</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">ему/ей</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">lho</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">ему/ей его</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">lha</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">ему/ей её</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">lhos</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">ему/ей их</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">lhas</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">ему/ей их</span></td></tr>
+<tr style="background:#fafafa;border-bottom:1.5px solid #ddd"><td style="padding:10px 12px;white-space:nowrap;vertical-align:middle"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">nos</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">нам</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">no-lo</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">нам его</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">no-la</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">нам её</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">no-los</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">нам их</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">no-las</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">нам их</span></td></tr>
+<tr style="border-bottom:.5px solid #eee"><td style="padding:10px 12px;white-space:nowrap;vertical-align:middle;opacity:.45"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">vos</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">вам †</span></td><td style="padding:10px 8px;text-align:center;opacity:.45"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">vo-lo</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вам его</span></td><td style="padding:10px 8px;text-align:center;opacity:.45"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">vo-la</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вам её</span></td><td style="padding:10px 8px;text-align:center;opacity:.45"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#2a4a9e">vo-los</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вам их</span></td><td style="padding:10px 8px;text-align:center;opacity:.45"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#9e2a5e">vo-las</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">вам их</span></td></tr>
+<tr style="background:#fafafa"><td style="padding:10px 12px;white-space:nowrap;vertical-align:middle"><span style="font-size:16px;font-weight:700;font-family:Georgia,serif;color:#1a1a2e">lhes</span><span style="display:block;font-size:13px;color:#666;margin-top:2px">им</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#aaa">lho</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">им его</span><span style="display:block;font-size:11px;color:#bbb;margin-top:1px">= lhe</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#aaa">lha</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">им её</span><span style="display:block;font-size:11px;color:#bbb;margin-top:1px">= lhe</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#aaa">lhos</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">им их</span><span style="display:block;font-size:11px;color:#bbb;margin-top:1px">= lhe</span></td><td style="padding:10px 8px;text-align:center"><span style="display:block;font-size:18px;font-weight:700;font-family:Georgia,serif;color:#aaa">lhas</span><span style="display:block;font-size:13px;color:#666;margin-top:3px">им их</span><span style="display:block;font-size:11px;color:#bbb;margin-top:1px">= lhe</span></td></tr>
+    </tbody>
+  </table>
+</div>
+        <p class="note" style="margin-top:10px">† <em>vos</em> архаично. &nbsp;·&nbsp; В разговорной речи двойные клитики редки — чаще повторяют имя: <em>dou-te o livro</em> вместо <em>dou-to</em>.</p>
+        <div class="rule">Порядок: IO → DO — через дефис после глагола.<br><span style="font-family:Georgia;font-size:15px">Dou-<strong>to</strong>. (дам тебе его) &nbsp; Ele dá-<strong>lho</strong>. (он даёт ему его) &nbsp; Enviaram-<strong>no-la</strong>. (прислали нам её)</span></div>
       </div>
       <div class="col-examples">
         <div class="ex-list">
-          <div class="ex"><span class="pt">Gosto <strong>disto</strong>.</span><span class="ru">Мне это нравится.</span></div>
-          <div class="ex"><span class="pt">Não fales <strong>nisso</strong>.</span><span class="ru">Не говори об этом.</span></div>
-          <div class="ex"><span class="pt">O que é <strong>aquilo</strong>?</span><span class="ru">Что это там такое?</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- После предлогов: mim/ti -->
-  <div class="contr-section">
-    <div class="contr-header"><span class="prep-badge">para / sem…</span><span class="prep-meaning">меняются только eu → mim и tu → ti</span></div>
-    <div class="two-col">
-      <div class="col-main">
-        <div class="afterprep-grid">
-          <div class="afterprep-cell special"><div class="base">eu →</div><div class="result">mim</div><div class="meaning">para <strong>mim</strong></div></div>
-          <div class="afterprep-cell special"><div class="base">tu →</div><div class="result">ti</div><div class="meaning">para <strong>ti</strong></div></div>
-          <div class="afterprep-cell"><div class="base">ele/ela →</div><div class="result">ele/ela</div><div class="meaning">para <strong>ele</strong></div></div>
-          <div class="afterprep-cell"><div class="base">nós →</div><div class="result">nós</div><div class="meaning">para <strong>nós</strong></div></div>
-          <div class="afterprep-cell"><div class="base">vocês →</div><div class="result">vocês</div><div class="meaning">para <strong>vocês</strong></div></div>
-          <div class="afterprep-cell"><div class="base">eles/elas →</div><div class="result">eles/elas</div><div class="meaning">para <strong>eles</strong></div></div>
-        </div>
-        <div class="rule"><strong>com</strong> сливается в одно слово:<br><span style="font-family:Georgia;font-size:16px;">comigo  contigo  connosco</span></div>
-        <div class="funfact"><strong>comigo/contigo/connosco</strong> — из латинского <em>mecum/tecum/nobiscum</em>, где «cum» было суффиксом. По-португальски суффикс переехал вперёд и стал приставкой.</div>
-      </div>
-      <div class="col-examples">
-        <div class="ex-list">
-          <div class="ex"><span class="pt">Isto é para <strong>mim</strong>?</span><span class="ru">Это для меня?</span></div>
-          <div class="ex"><span class="pt">Vem <strong>comigo</strong>!</span><span class="ru">Иди со мной!</span></div>
-          <div class="ex"><span class="pt">Ele fala de <strong>ti</strong>.</span><span class="ru">Он говорит о тебе.</span></div>
-          <div class="ex"><span class="pt">Quero falar <strong>contigo</strong>.</span><span class="ru">Хочу с тобой поговорить.</span></div>
+          <div class="ex"><span class="pt">Dou-<strong>to</strong>.</span><span class="ru">Я тебе его даю. (te + o)</span></div>
+          <div class="ex"><span class="pt">Ele dá-<strong>lho</strong>.</span><span class="ru">Он ему его даёт. (lhe + o)</span></div>
+          <div class="ex"><span class="pt">Ela deu-<strong>ma</strong>.</span><span class="ru">Она мне её дала. (me + a)</span></div>
+          <div class="ex"><span class="pt">Enviaram-<strong>no-la</strong>.</span><span class="ru">Они нам её прислали. (nos + a)</span></div>
+          <div class="ex"><span class="pt">Deu-<strong>lha</strong> ontem.</span><span class="ru">Дал им её вчера. (lhes + a)</span></div>
         </div>
       </div>
     </div>
@@ -1076,7 +1013,7 @@ document.querySelectorAll('.m, .f, .pt-ico').forEach(el => {
 
 <script>
 const W = {
-  'fim':              { w:'o fim', ipa:'у фин', m:['конец', 'цель, назначение'] },
+  'fim':              { w:'o fim', ipa:'у фим', m:['конец', 'цель, назначение'] },
   'eternidade':       { w:'uma eternidade', ipa:'ума этэрнидадэ', m:['вечность', 'целая вечность (разг. — очень долго)'] },
   'dedos-pes':        { w:'os dedos dos pés', ipa:'уш дэдуш душ пэш', m:['пальцы ног'], gr:'dos = de + os. Dedos das mãos — пальцы рук.' },
   'sentia-pernas':    { w:'eu sentia as pernas', ipa:'эу сэнтиа аш пэрнаш', m:['я чувствовал ноги'], gr:'sentia — imperfeito от sentir: ощущение, длившееся в прошлом.' },
@@ -1091,19 +1028,19 @@ const W = {
   'noites-longas':    { w:'noites longas', ipa:'нойтэш лонгаш', m:['долгие ночи'], gr:'noite (ж.р.) → мн.ч. noites. Прилагательное согласуется: longa → longas.' },
   'enfermeira':       { w:'enfermeira', ipa:'энфэрмэйра', m:['медсестра', 'медицинская сестра', 'enfermeiro — медбрат (м.р.)'] },
   'injecoes':         { w:'injeções', ipa:'инжэсоинш', m:['уколы, инъекции', 'injeção — укол (ед.ч.)'] },
-  'algem-vinha':      { w:'alguém vinha', ipa:'алгэйн винья', m:['кто-то приходил'], gr:'alguém — неопред. местоим. «кто-то». Vinha — imperfeito от vir.' },
+  'algem-vinha':      { w:'alguém vinha', ipa:'алгэйм винья', m:['кто-то приходил'], gr:'alguém — неопред. местоим. «кто-то». Vinha — imperfeito от vir.' },
   'seringa':          { w:'seringa', ipa:'сэринга', m:['шприц', 'seringa de água — водяной пистолет (разг.)'] },
   'lembrei-me':       { w:'lembrei-me disto', ipa:'лэмбрэй мэ дишту', m:['я это вспомнил'], gr:'lembrar-se de = вспомнить. Disto = de + isto. -me — возвратная частица 1-го лица.' },
   'acho-que-nao':     { w:'acho que não', ipa:'ашу кэ нао', m:['думаю, что нет', 'наверное, нет'], gr:'achar que = «думать, что». Acho = 1-е л. ед.ч. от achar.' },
   'drogas':           { w:'drogas', ipa:'дрогаш', m:['препараты, наркотики', 'droga — лекарство (разг.), дрянь', 'Que droga! — Вот досада!'] },
   'de-repente':       { w:'de repente', ipa:'дэ рэпэнтэ', m:['вдруг, внезапно', 'неожиданно'] },
   'como-me-sinto':    { w:'como eu me sinto', ipa:'кому эу мэ синту', m:['как я себя чувствую'], gr:'sentir-se = чувствовать себя (возвратный). Sinto = 1-е л. ед.ч. от sentir.' },
-  'com-muito-cuidado':{ w:'com muito cuidado', ipa:'кон муйту куидаду', m:['очень осторожно', 'с большой осторожностью'] },
+  'com-muito-cuidado':{ w:'com muito cuidado', ipa:'ком муйту куидаду', m:['очень осторожно', 'с большой осторожностью'] },
   'voz-interior':     { w:'a minha voz interior', ipa:'а минья вош интэриор', m:['мой внутренний голос'] },
   'porta-abriu':      { w:'a porta', ipa:'а порта', m:['дверь', 'a porta abriu — дверь открылась'] },
   'enfermeira-saiu':  { w:'a enfermeira saiu', ipa:'а энфэрмэйра саиу', m:['медсестра вышла'], gr:'saiu — прош. от sair, 3-е лицо.' },
   'na-memoria':       { w:'na memória', ipa:'на мэмориа', m:['в памяти', 'в воспоминаниях'], gr:'na = em + a.' },
-  'acidente-carro':   { w:'um acidente de carro', ipa:'ун асидэнтэ дэ карру', m:['автомобильная авария', 'ДТП'] },
+  'acidente-carro':   { w:'um acidente de carro', ipa:'ум асидэнтэ дэ карру', m:['автомобильная авария', 'ДТП'] },
   'acidente':         { w:'acidente', ipa:'асидэнтэ', m:['авария, происшествие', 'несчастный случай'] },
   'no-hospital':      { w:'no hospital', ipa:'ну ошпитал', m:['в больнице'], gr:'no = em + o.' },
   'nao-sei':          { w:'Não sei', ipa:'нао сэй', m:['Не знаю', 'Понятия не имею'] },
@@ -1112,16 +1049,16 @@ const W = {
   'corpo-fraco':      { w:'o meu corpo estava fraco', ipa:'у мэу корпу иштава фраку', m:['моё тело было слабым'], gr:'Fraco = слабый. Estava — imperfeito от estar (временное состояние).' },
   'noite-escura':     { w:'uma noite escura', ipa:'ума нойтэ ишкура', m:['тёмная ночь', 'escuro/a = тёмный / тёмная'] },
   'estrelas-ceu':     { w:'estrelas no céu', ipa:'иштрэлаш ну сэу', m:['звёзды на небе'], gr:'no céu = em + o céu. Estrela (ж.р.) → estrelas (мн.ч.).' },
-  'no-chao':          { w:'no chão', ipa:'ну шаун', m:['на полу', 'на земле'], gr:'no = em + o. Chão = пол, земля.' },
+  'no-chao':          { w:'no chão', ipa:'ну шао', m:['на полу', 'на земле'], gr:'no = em + o. Chão = пол, земля.' },
   'levantei-me':      { w:'eu levantei-me', ipa:'эу лэвантэй мэ', m:['я встал / поднялся'], gr:'levantar-se = вставать (возвратный). -me — возвратная частица 1-го лица.' },
   'da-cama':          { w:'da cama', ipa:'да кама', m:['с кровати', 'от кровати'], gr:'da = de + a.' },
   'primeiro-passo':   { w:'o primeiro passo', ipa:'у примэйру пасу', m:['первый шаг', 'passo = шаг'] },
-  'pernas-aguentam':  { w:'as pernas aguentam', ipa:'аш пэрнаш агуэнтан', m:['ноги держат', 'ноги справляются'], gr:'aguentar = выдерживать, справляться. 3-е л. мн.ч.' },
+  'pernas-aguentam':  { w:'as pernas aguentam', ipa:'аш пэрнаш агуэнтам', m:['ноги держат', 'ноги справляются'], gr:'aguentar = выдерживать, справляться. 3-е л. мн.ч.' },
   'sair':             { w:'sair', ipa:'саир', m:['выйти, уйти', 'уехать, выбраться'] },
   'na-cama':          { w:'na cama', ipa:'на кама', m:['в кровати', 'на кровати'], gr:'na = em + a.' },
   'comecei-pensar':   { w:'comecei a pensar', ipa:'кумэсэй а пэнсар', m:['начал думать'], gr:'começar a + infinitivo = начать делать что-то. Comecei — прош. 1-е лицо.' },
   'porcaria':         { w:'Que porcaria', ipa:'кэ пуркариа', m:['Какая дрянь! Вот досада!'], gr:'Que + существит. = восклицание «Какой/Что за…!». Porcaria (от porco — свинья) = дрянь, ерунда.' },
-  'seringa-mao':      { w:'com uma seringa na mão', ipa:'кон ума сэринга на мао', m:['со шприцом в руке'], gr:'na mão = em + a mão. Mão = рука (кисть). Mãos = руки.' },
+  'seringa-mao':      { w:'com uma seringa na mão', ipa:'ком ума сэринга на мао', m:['со шприцом в руке'], gr:'na mão = em + a mão. Mão = рука (кисть). Mãos = руки.' },
   'boa-noite':        { w:'Boa noite', ipa:'боа нойтэ', m:['Добрый вечер / Спокойной ночи', 'Приветствие и прощание с наступлением темноты'] },
   'posso-sair':       { w:'posso sair daqui', ipa:'поссу саир даки', m:['могу ли я отсюда выйти?'], gr:'posso = 1-е л. от poder. Daqui = de + aqui (отсюда).' },
   'medico':           { w:'médico', ipa:'мэдику', m:['врач', 'доктор', 'médica — врач (ж.р.)'] },
@@ -1129,17 +1066,17 @@ const W = {
   'obrigado-nao':     { w:'obrigado, já não quero', ipa:'убригаду, жа нао кэру', m:['спасибо, уже не хочу / не надо'], gr:'já não = «уже нет, больше не». Obrigado (м.р.) / Obrigada (ж.р.).' },
   'injecao':          { w:'injeção', ipa:'инжэсао', m:['укол, инъекция', 'injeções — мн.ч.'] },
   'medico-mandou':    { w:'o médico mandou', ipa:'у мэдику мандоу', m:['врач приказал / велел'], gr:'mandar = приказывать. Mandou — прош. 3-е лицо.' },
-  'medico-vem':       { w:'o médico vem aqui', ipa:'у мэдику вэн аки', m:['пусть врач придёт сюда'], gr:'vem = 3-е л. наст. от vir. Vir aqui = прийти сюда.' },
-  'bem':              { w:'Bem', ipa:'бэн', m:['Ладно / Хорошо (уступка)', 'хорошо (нареч.)', 'добро, благо (сущ.)'] },
+  'medico-vem':       { w:'o médico vem aqui', ipa:'у мэдику вэм аки', m:['пусть врач придёт сюда'], gr:'vem = 3-е л. наст. от vir. Vir aqui = прийти сюда.' },
+  'bem':              { w:'Bem', ipa:'бэм', m:['Ладно / Хорошо (уступка)', 'хорошо (нареч.)', 'добро, благо (сущ.)'] },
   'ao-medico':        { w:'ao médico', ipa:'ао мэдику', m:['к врачу / врачу (дат.)'], gr:'ao = a + o. Доложить кому? — ao médico.' },
   'amanha-manha':     { w:'amanhã de manhã', ipa:'аманья дэ манья', m:['завтра утром'], gr:'amanhã = завтра. De manhã = утром. Вместе — «завтра утром».' },
-  'impossivel':       { w:'impossível', ipa:'инпусивэл', m:['невозможно', 'невозможный'] },
+  'impossivel':       { w:'impossível', ipa:'импусивэл', m:['невозможно', 'невозможный'] },
   'clinica-privada':  { w:'uma clínica privada', ipa:'ума клиника привада', m:['частная клиника'] },
   'familia':          { w:'a minha família', ipa:'а минья фамилиа', m:['моя семья'] },
   'amigos':           { w:'os meus amigos', ipa:'уш мэуш амигуш', m:['мои друзья', 'amigo — друг, amiga — подруга'] },
   'inimigos':         { w:'os inimigos', ipa:'уш инимигуш', m:['враги', 'inimigo — враг, противник'] },
   'meu-carro':        { w:'o meu carro', ipa:'у мэу карру', m:['моя машина', 'carro = автомобиль'] },
-  'nao-sabia':        { w:'eu não sabia quem eu era', ipa:'эу нао сабиа кэн эу эра', m:['я не знал, кто я такой'], gr:'sabia — imperfeito от saber. Era — imperfeito от ser. Оба описывают длившееся незнание.' },
+  'nao-sabia':        { w:'eu não sabia quem eu era', ipa:'эу нао сабиа кэм эу эра', m:['я не знал, кто я такой'], gr:'sabia — imperfeito от saber. Era — imperfeito от ser. Оба описывают длившееся незнание.' },
   'tirei-ligaduras':  { w:'tirei as ligaduras', ipa:'тирэй аш лигадураш', m:['снял повязки / бинты'], gr:'tirar = снимать, убирать. Ligaduras = бинты, повязки. Tirei — прош. 1-е лицо.' },
   'parti-gesso-direita':{ w:'parti o gesso na perna direita', ipa:'парти у жэссу на пэрна дирэйта', m:['разбил гипс на правой ноге'], gr:'partir = разбить (и «уехать»). Direita = правая; direito = правый / право.' },
   'sair-rapido':      { w:'sair daqui o mais rápido possível', ipa:'саир даки у майш рапиду пусивэл', m:['уйти отсюда как можно быстрее'], gr:'o mais … possível = «как можно более…». Буквально: «самое быстрое возможное».' },
@@ -1147,7 +1084,7 @@ const W = {
   'armario':          { w:'armário', ipa:'армариу', m:['шкаф', 'гардероб'] },
   'vazio':            { w:'Vazio', ipa:'вэзиу', m:['пустой / пусто', 'vazia — ж.р.'] },
   'quarto':           { w:'quarto', ipa:'куарту', m:['комната', 'палата (больничная)', 'четвёртый (порядков.)'] },
-  'homem-bata':       { w:'homem de bata branca', ipa:'омэн дэ бата бранка', m:['мужчина в белом халате'], gr:'bata branca = белый халат (медицинский).' },
+  'homem-bata':       { w:'homem de bata branca', ipa:'омэм дэ бата бранка', m:['мужчина в белом халате'], gr:'bata branca = белый халат (медицинский).' },
   'hora-injecao':     { w:'É hora da injeção', ipa:'э ора да инжэсао', m:['Пора укола / Время укола'], gr:'É hora de/da = «пора + …». Da = de + a.' },
   'senhor-medico':    { w:'O senhor é médico?', ipa:'у сэньор э мэдику', m:['Вы врач?'], gr:'O senhor = вежливое «вы» (дословно «господин»). Более формально, чем você.' },
   'vou-fazer-injecao':{ w:'vou fazer a injeção', ipa:'воу фазэр а инжэсао', m:['я сделаю укол (всё равно)'], gr:'vou + infinitivo = futuro próximo (ближайшее будущее). Буквально: «иду сделать укол».' },

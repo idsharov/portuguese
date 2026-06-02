@@ -80,6 +80,7 @@ main { margin-left: var(--nav-w); padding: 56px 48px 120px; max-width: calc(var(
 .section-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #999; margin-bottom: 8px; }
 h2 { font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
 .section-sub { font-size: 16px; color: #666; margin-bottom: 24px; max-width: calc(100% - 288px); }
+.desc-constrained { max-width: calc(100% - 288px); }
 hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 
 /* ── TWO-COL LAYOUT ── */
@@ -144,6 +145,8 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 
 /* ── TABLE CARD WRAPPER ── */
 .table-card { background: #fff; border: 1px solid #e0ddd5; border-radius: 12px; overflow-x: auto; margin-bottom: 16px; -webkit-overflow-scrolling: touch; }
+.table-card table th,
+.table-card table td { white-space: nowrap; }
 
 /* ── EXAMPLES — compact, no boxes ── */
 .ex-list { display: flex; flex-direction: column; }
@@ -215,6 +218,8 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
   main { margin-left: 0; padding: 60px 20px 80px; max-width: 100%; }
   .page-header h1 { font-size: 26px; }
   .two-col { grid-template-columns: 1fr; }
+  .section-sub { max-width: 100%; }
+  .desc-constrained { max-width: 100%; }
   .col-examples { order: 10; }
   .art-grid { grid-template-columns: 1fr 1fr; }
   .contr-grid { grid-template-columns: repeat(2, 1fr); }
@@ -428,7 +433,7 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
   <div class="two-col">
     <div class="col-main">
       <div class="table-card tbl-scroll" style="margin-bottom:14px">
-  <table style="width:100%;border-collapse:collapse">
+  <table style="width:100%;border-collapse:collapse;min-width:400px">
     <thead>
       <tr style="border-bottom:2px solid #ddd">
         <th style="padding:9px 14px;text-align:left;width:130px"></th>
@@ -464,8 +469,8 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
       </div>
     </div>
   </div>
-  <p class="note" style="margin-bottom:8px;max-width:calc(100% - 288px)">Неопределённые артикли <em>um / umas</em> с предлогами не сливаются.</p>
-  <p style="margin:0 0 12px;font-size:13px;font-weight:600;color:#555;letter-spacing:.02em;max-width:calc(100% - 288px)">Слияния с определёнными артиклями</p>
+  <p class="note desc-constrained" style="margin-bottom:8px">Неопределённые артикли <em>um / umas</em> с предлогами не сливаются.</p>
+  <p class="desc-constrained" style="margin:0 0 12px;font-size:13px;font-weight:600;color:#555;letter-spacing:.02em">Слияния с определёнными артиклями</p>
   <div class="two-col" style="margin-top:0">
     <div class="col-main">
       <div class="table-card tbl-scroll">
@@ -537,7 +542,7 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
   <div class="section-label">Блок 1 · Раздел 3</div>
   <h2>Предлоги и клитики</h2>
   <p class="section-sub">de и em всегда сливаются с местоимениями 3-го лица и указательными. Раздельно — ошибка.</p>
-  <p class="note" style="margin-top:-4px;margin-bottom:16px;max-width:calc(100% - 288px)"><strong>Клитика</strong> — безударное местоимение, которое «прилипает» к глаголу. В EP ставится после глагола через дефис: <em>dou-te</em> (даю тебе), <em>vejo-o</em> (вижу его).</p>
+  <p class="note desc-constrained" style="margin-top:-4px;margin-bottom:16px"><strong>Клитика</strong> — безударное местоимение, которое «прилипает» к глаголу. В EP ставится после глагола через дефис: <em>dou-te</em> (даю тебе), <em>vejo-o</em> (вижу его).</p>
 
   <div class="two-col">
     <div class="col-main">
@@ -575,7 +580,7 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 </div>
       <p class="note" style="margin-bottom:12px"><strong>com ele / com ela / com eles / com elas</strong> — не сливается, пишется раздельно.</p>
       <div class="table-card tbl-scroll">
-  <table style="width:100%;border-collapse:collapse">
+  <table style="width:100%;border-collapse:collapse;min-width:380px">
     <thead>
       <tr style="border-bottom:2px solid #ddd">
         <th style="padding:9px 14px;text-align:left;width:110px"></th>
@@ -614,7 +619,7 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
 
   <div style="margin-top:28px;padding-top:22px;border-top:1px solid #eee">
     <h3 style="font-size:17px;font-weight:600;color:#1a1a2e;margin:0 0 8px">Двойные клитики — IO + DO</h3>
-    <p style="font-size:14px;color:#555;line-height:1.65;margin:0 0 16px;max-width:calc(100% - 288px)">Когда глагол управляет <em>двумя</em> объектами — <strong>кому</strong> (IO, косвенное) и <strong>что</strong> (DO, прямое) — оба местоимения ставятся после глагола через дефис и сливаются в одну форму по таблице ниже. IO всегда стоит <em>первым</em>, DO — вторым. Строка <strong>lhes</strong> совпадает с <strong>lhe</strong>: перед прямым объектом <em>lhes</em> теряет -s.</p>
+    <p class="desc-constrained" style="font-size:14px;color:#555;line-height:1.65;margin:0 0 16px">Когда глагол управляет <em>двумя</em> объектами — <strong>кому</strong> (IO, косвенное) и <strong>что</strong> (DO, прямое) — оба местоимения ставятся после глагола через дефис и сливаются в одну форму по таблице ниже. IO всегда стоит <em>первым</em>, DO — вторым. Строка <strong>lhes</strong> совпадает с <strong>lhe</strong>: перед прямым объектом <em>lhes</em> теряет -s.</p>
     <div class="two-col">
       <div class="col-main">
         <div class="table-card tbl-scroll">

@@ -279,6 +279,40 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
   .contr-grid { grid-template-columns: 1fr 1fr; }
   .afterprep-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ── READING SECTION ── */
+.reading-body { max-width: 660px; }
+.reading-para { font-size: 16px; line-height: 1.85; margin-bottom: 18px; color: #1a1a1a; }
+.dlg { margin: 0 0 4px 0; padding: 0; }
+.dlg-line { font-size: 16px; line-height: 1.75; font-style: italic; color: #2a2a2a; }
+.dlg-attr { font-size: 13px; color: #888; margin-left: 20px; margin-bottom: 14px; }
+.note-block { background: #fffdf5; border-left: 3px solid #e5c84a; padding: 10px 14px; border-radius: 0 6px 6px 0; margin: 4px 0 18px; font-size: 15px; line-height: 1.7; font-style: italic; }
+
+/* clickable Portuguese word */
+.w { border-bottom: 1.5px dotted #aaa; cursor: pointer; transition: border-color .15s, color .15s; }
+.w:hover { border-bottom-color: #555; color: #111; }
+
+/* tooltip */
+#word-tip {
+  position: fixed; z-index: 9999;
+  background: #fff; border: 1px solid #ddd; border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.14);
+  padding: 13px 15px 12px; max-width: 280px; min-width: 180px;
+  display: none;
+}
+#wt-word { font-size: 16px; font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
+#wt-ipa  { font-size: 12px; color: #888; margin-bottom: 9px; font-family: monospace; }
+#wt-meanings { font-size: 14px; color: #333; line-height: 1.55; }
+#wt-meanings li { margin-bottom: 3px; }
+#wt-meanings li:last-child { margin-bottom: 0; }
+#wt-gr   { font-size: 12px; color: #666; margin-top: 8px; padding-top: 8px; border-top: 1px solid #eee; line-height: 1.5; }
+#wt-close { position: absolute; top: 8px; right: 10px; background: none; border: none; font-size: 17px; color: #aaa; cursor: pointer; line-height: 1; padding: 0; }
+#wt-close:hover { color: #555; }
+
+@media (max-width: 600px) {
+  .reading-para, .dlg-line { font-size: 15px; }
+  #word-tip { max-width: 240px; }
+}
 </style>
 </head>
 <body>
@@ -301,6 +335,8 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
   <a href="#prep-pronouns">Предлоги + местоимения</a>
   <div class="nav-group">Глаголы</div>
   <a href="#verbs">Неправильные глаголы</a>
+  <div class="nav-group">Практика</div>
+  <a href="#reading">Пробуждение</a>
 </nav>
 
 <main>
@@ -688,6 +724,125 @@ hr.divider { border: none; border-top: 1px solid #e0ddd5; margin: 60px 0; }
   <div id="fams"></div>
 </section>
 
+<!-- ── READING SECTION ── -->
+<section class="section" id="reading">
+  <div class="section-label">Практика · Пробуждение</div>
+  <h2>Пробуждение</h2>
+  <p class="section-sub">Смешанный текст: русский + португальский. Нажми на <span class="w" style="pointer-events:none">слово с точками</span> — перевод, транскрипция, грамматика.</p>
+
+  <div class="reading-body">
+
+    <p class="reading-para">
+      Похоже, наступал <span class="w" data-v="fim">o fim</span> тому, что казалось мне <span class="w" data-v="eternidade">uma eternidade</span>.
+    </p>
+
+    <p class="reading-para">
+      Я попробовал пошевелить <span class="w" data-v="dedos-pes">os dedos dos pés</span>. Успешно. <span class="w" data-v="sentia-pernas">Eu sentia as pernas</span>, хотя они и были <span class="w" data-v="gesso">em gesso</span>. А сам я <span class="w" data-v="estava-deitado">estava deitado na cama</span> в <span class="w" data-v="hospital">hospital</span>.
+    </p>
+
+    <p class="reading-para">
+      Я зажмурился, потом снова <span class="w" data-v="abri-olhos">abri os olhos</span>. <span class="w" data-v="paredes-quarto">As paredes do quarto</span> наконец перестали качаться. Где же я, <span class="w" data-v="caramba">caramba</span>?
+    </p>
+
+    <p class="reading-para">
+      <span class="w" data-v="nevoeiro-cabeca">O nevoeiro na cabeça</span> понемногу рассеивался; в нем, словно острова в океане, стали возникать обрывки того, что некогда было <span class="w" data-v="memoria">a minha memória</span>. Я вспоминал <span class="w" data-v="noites-longas">noites longas</span>, бесчисленных <span class="w" data-v="enfermeira">enfermeiras</span>, <span class="w" data-v="injecoes">injeções</span>, <span class="w" data-v="injecoes">injeções</span>… стоило мне чуточку прийти в себя, как тут же <span class="w" data-v="algem-vinha">alguém vinha</span> и всаживал в меня <span class="w" data-v="seringa">uma seringa</span> с какой-нибудь дрянью. Да, так оно и было. <span class="w" data-v="lembrei-me">Lembrei-me disto</span>. И пусть я только наполовину пришел в себя, <span class="w" data-v="injecoes">as injeções</span> им придется прекратить.
+    </p>
+
+    <p class="reading-para">
+      Но захотят ли они их прекратить? Почему-то упорно думалось: <span class="w" data-v="acho-que-nao">acho que não</span>.
+    </p>
+
+    <p class="reading-para">
+      Эта мысль пробудила в моей душе естественные сомнения. Меня длительное время пичкали <span class="w" data-v="drogas">drogas</span>, понял я <span class="w" data-v="de-repente">de repente</span>. Причем без особых на то причин, судя по тому, <span class="w" data-v="como-me-sinto">como eu me sinto</span>. Так что, если им за это платят, с какой стати они вдруг прекратят <span class="w" data-v="injecoes">as injeções</span>? Нет, действовать надо <span class="w" data-v="com-muito-cuidado">com muito cuidado</span>, сказал мне <span class="w" data-v="voz-interior">a minha voz interior</span>. Надо продолжать притворяться, что дурман еще действует.
+    </p>
+
+    <p class="reading-para">
+      Я последовал его совету. Минут через десять <span class="w" data-v="porta-abriu">a porta abriu</span> и на пороге возникла <span class="w" data-v="enfermeira">a enfermeira</span>. А я лежал себе и похрапывал. <span class="w" data-v="enfermeira-saiu">A enfermeira saiu</span> тут же. Теперь мне уже удалось кое-что восстановить <span class="w" data-v="na-memoria">na memória</span>.
+    </p>
+
+    <p class="reading-para">
+      Я смутно припоминал, как попал в <span class="w" data-v="acidente-carro">um acidente de carro</span>; потом — сплошное черное пятно. О том, что было до <span class="w" data-v="acidente">acidente</span>, я тоже не имел ни малейшего представления. Но помнил, что сначала угодил <span class="w" data-v="no-hospital">no hospital</span>, а уже потом сюда. Зачем? <span class="w" data-v="nao-sei">Não sei</span>.
+    </p>
+
+    <p class="reading-para">
+      <span class="w" data-v="minhas-pernas">As minhas pernas</span> совсем отошли и явно годились для того, чтобы на них стоять, хотя я понятия не имел, когда они были сломаны. А то, что они были сломаны, я знал <span class="w" data-v="perfeitamente">perfeitamente</span>.
+    </p>
+
+    <p class="reading-para">
+      Я попытался сесть. Это оказалось непросто: <span class="w" data-v="corpo-fraco">o meu corpo estava fraco</span>. За окном стояла <span class="w" data-v="noite-escura">uma noite escura</span> — яркие <span class="w" data-v="estrelas-ceu">estrelas no céu</span> смотрели на меня. Я подмигнул им и спустил ноги <span class="w" data-v="no-chao">no chão</span>.
+    </p>
+
+    <p class="reading-para">
+      Перед глазами все поплыло, однако вскоре в голове прояснилось, <span class="w" data-v="levantei-me">eu levantei-me</span> держась за спинку <span class="w" data-v="da-cama">da cama</span>, и сделал <span class="w" data-v="primeiro-passo">o primeiro passo</span>. Нормально. <span class="w" data-v="pernas-aguentam">As pernas aguentam</span>. Итак, теоретически я уже в состоянии отсюда <span class="w" data-v="sair">sair</span>.
+    </p>
+
+    <p class="reading-para">
+      Я снова залез <span class="w" data-v="na-cama">na cama</span>, вытянулся на спине и <span class="w" data-v="comecei-pensar">comecei a pensar</span>. От совершенных усилий и слабости меня знобило... Да, это точно был <span class="w" data-v="acidente-carro">um acidente de carro</span>. <span class="w" data-v="porcaria">Que porcaria</span>...
+    </p>
+
+    <p class="reading-para">
+      Приоткрылась <span class="w" data-v="porta-abriu">a porta</span>, сквозь щель в палату ворвался поток света. Я чуть опустил веки и увидел, что это снова <span class="w" data-v="enfermeira">a enfermeira</span> <span class="w" data-v="seringa-mao">com uma seringa na mão</span>. Когда она подошла совсем близко, я неожиданно приподнялся и сел <span class="w" data-v="na-cama">na cama</span>.
+    </p>
+
+    <div class="dlg"><p class="dlg-line">— <span class="w" data-v="boa-noite">Boa noite</span>! — сказал я.</p></div>
+    <div class="dlg"><p class="dlg-line">— Ох! <span class="w" data-v="boa-noite">Boa noite</span>, — ответила она.</p></div>
+    <div class="dlg"><p class="dlg-line">— Когда я <span class="w" data-v="posso-sair">posso sair daqui</span>? — спросил я.</p></div>
+    <div class="dlg"><p class="dlg-line">— Об этом надо спросить у <span class="w" data-v="medico">médico</span>.</p></div>
+    <div class="dlg"><p class="dlg-line">— Ну так спросите.</p></div>
+    <div class="dlg"><p class="dlg-line">— <span class="w" data-v="por-favor">Por favor</span>, поднимите рукав.</p></div>
+    <div class="dlg"><p class="dlg-line">— Да нет, <span class="w" data-v="obrigado-nao">obrigado, já não quero</span>.</p></div>
+    <div class="dlg"><p class="dlg-line">— Но мне необходимо сделать вам <span class="w" data-v="injecao">uma injeção</span>.</p></div>
+    <div class="dlg"><p class="dlg-line">— Нет, никакой необходимости в этом нет.</p></div>
+    <div class="dlg"><p class="dlg-line">— Так <span class="w" data-v="medico-mandou">o médico mandou</span>!</p></div>
+    <div class="dlg"><p class="dlg-line">— Вот пусть <span class="w" data-v="medico-vem">o médico vem aqui</span> и сам мне об этом скажет. А пока что я категорически против.</p></div>
+    <div class="dlg"><p class="dlg-line">— Но мне же приказано…</p></div>
+    <div class="dlg"><p class="dlg-line">— <span class="w" data-v="bem">Bem</span>, — вздохнула <span class="w" data-v="enfermeira">enfermeira</span>. — Мне придется доложить <span class="w" data-v="ao-medico">ao médico</span>…</p></div>
+    <div class="dlg"><p class="dlg-line">— Пожалуйста, докладывайте, — сказал я. — Заодно сообщите <span class="w" data-v="ao-medico">ao médico</span>, что <span class="w" data-v="amanha-manha">amanhã de manhã</span> я ухожу.</p></div>
+    <div class="dlg"><p class="dlg-line">— <span class="w" data-v="impossivel">Não, isso é impossível</span>! Вы ведь даже ходить еще не в состоянии!</p></div>
+    <div class="dlg"><p class="dlg-line">— Ладно, посмотрим, — кивнул я. — <span class="w" data-v="boa-noite">Boa noite</span>.</p></div>
+
+    <p class="reading-para">Она вылетела в коридор, ничего не ответив.</p>
+
+    <p class="reading-para">
+      А я снова лег и <span class="w" data-v="comecei-pensar">comecei a pensar</span>. По-видимому, я нахожусь в <span class="w" data-v="clinica-privada">uma clínica privada</span>. Значит, кто-то платит за мое пребывание здесь. Интересно, кто? Никаких родственников я вспомнить не мог — <span class="w" data-v="familia">a minha família</span> исчезла из головы. <span class="w" data-v="amigos">Os meus amigos</span> тоже. Кто же тогда платит? <span class="w" data-v="inimigos">Os inimigos</span>?
+    </p>
+
+    <p class="reading-para">
+      Вдруг я вспомнил: <span class="w" data-v="meu-carro">o meu carro</span> летит под откос на горной дороге и падает в озеро… Дальше — полный мрак. <span class="w" data-v="nao-sabia">Eu não sabia quem eu era</span> antes.
+    </p>
+
+    <p class="reading-para">
+      Чтобы отвлечься, я сел и быстренько <span class="w" data-v="tirei-ligaduras">tirei as ligaduras</span>. Под бинтами все давно зажило. Потом я <span class="w" data-v="parti-gesso-direita">parti o gesso na perna direita</span> металлическим прутом, вынутым из спинки <span class="w" data-v="da-cama">da cama</span>. Мною овладело странное чувство: казалось, что нужно <span class="w" data-v="sair-rapido">sair daqui o mais rápido possível</span>, чтобы успеть сделать нечто важное.
+    </p>
+
+    <p class="reading-para">
+      Я попробовал встать на правую ногу. Нормально. Потом я <span class="w" data-v="parti-gesso-esquerda">parti o gesso na perna esquerda</span>, встал и потихоньку пошел к <span class="w" data-v="armario">armário</span>. <span class="w" data-v="vazio">Vazio</span>. Одежды там не было.
+    </p>
+
+    <p class="reading-para">
+      В коридоре послышались шаги. Я снова лег. <span class="w" data-v="porta-abriu">A porta</span> опять приоткрылась. В <span class="w" data-v="quarto">quarto</span> вспыхнул яркий свет; на пороге высился здоровенный <span class="w" data-v="homem-bata">homem de bata branca</span>, смахивавший на быка. Это он зажег свет: пальцы его до сих пор лежали на выключателе.
+    </p>
+
+    <p class="reading-para">
+      — Что вы тут удумали? <span class="w" data-v="enfermeira">A enfermeira</span> на вас жалуется, — сказал он. Притворяться спящим больше не имело смысла. — Неужели? — спросил я. Детина строго произнес:
+    </p>
+
+    <div class="dlg"><p class="dlg-line">— <span class="w" data-v="hora-injecao">É hora da injeção</span>.</p></div>
+    <div class="dlg"><p class="dlg-line">— <span class="w" data-v="senhor-medico">O senhor é médico</span>?</p></div>
+    <div class="dlg"><p class="dlg-line">— Нет, но мне поручено сделать вам <span class="w" data-v="injecao">injeção</span>.</p></div>
+    <div class="dlg"><p class="dlg-line">— А я не хочу, чтобы мне делали укол, — заявил я. — Что вы на это скажете?</p></div>
+    <div class="dlg"><p class="dlg-line">— Что я все равно <span class="w" data-v="vou-fazer-injecao">vou fazer a injeção</span>, — ответил здоровяк и двинулся к <span class="w" data-v="na-cama">cama</span>. В руке он держал <span class="w" data-v="seringa">seringa</span>.</p></div>
+
+    <p class="reading-para">Это был исключительно подлый удар. Детина рухнул на колени. И я понял, что настало время действовать.</p>
+
+    <div class="dlg"><p class="dlg-line">— Где мои <span class="w" data-v="roupas">roupas</span>? — спросил я.</p></div>
+    <div class="dlg"><p class="dlg-line">— Тогда, пожалуй, придется позаимствовать твою. <span class="w" data-v="tira-roupa">Tira a roupa</span>!</p></div>
+
+    <p class="reading-para">После третьего раза мне надоело. Я накинул простыню ему на голову и как следует врезал тем самым железным прутом.</p>
+
+  </div>
+</section>
+
 </main>
 
 <!-- ── JS: NAV TOGGLE ── -->
@@ -900,6 +1055,162 @@ document.querySelectorAll('.m, .f, .pt-ico').forEach(el => {
     if (n.nodeType === 3) n.textContent = n.textContent.replace(/[♂♀]/g, m => m + '︎');
   });
 });
+</script>
+
+<!-- ── WORD TOOLTIP ── -->
+<div id="word-tip">
+  <button id="wt-close" onclick="hideTip()">×</button>
+  <div id="wt-word"></div>
+  <div id="wt-ipa"></div>
+  <div id="wt-meanings"></div>
+  <div id="wt-gr"></div>
+</div>
+
+<script>
+const W = {
+  'fim':              { w:'o fim', ipa:'[u fĩ]', m:['конец', 'цель, назначение'] },
+  'eternidade':       { w:'uma eternidade', ipa:'[ũmɐ etɨɾniˈdadɨ]', m:['вечность', 'целая вечность (разг. — очень долго)'] },
+  'dedos-pes':        { w:'os dedos dos pés', ipa:'[uʒ ˈdeduʒ duʒ pɛʃ]', m:['пальцы ног'], gr:'dos = de + os. Dedos das mãos — пальцы рук.' },
+  'sentia-pernas':    { w:'eu sentia as pernas', ipa:'[sẽˈtiɐ ɐʒ ˈpɛɾnɐʃ]', m:['я чувствовал ноги'], gr:'sentia — imperfeito от sentir: ощущение, длившееся в прошлом.' },
+  'gesso':            { w:'gesso', ipa:'[ˈʒɛsu]', m:['гипс', 'штукатурка'] },
+  'estava-deitado':   { w:'estava deitado na cama', ipa:'[iʃˈtavɐ dejˈtadu nɐ ˈkɐmɐ]', m:['лежал в кровати'], gr:'estava + particípio = длящееся состояние. Deitado — лежащий (от deitar).' },
+  'hospital':         { w:'hospital', ipa:'[oʃpiˈtal]', m:['больница', 'госпиталь'] },
+  'abri-olhos':       { w:'abri os olhos', ipa:'[ɐˈbɾi uʒ ˈoʎuʃ]', m:['открыл глаза'], gr:'abri — прош. от abrir, 1-е лицо. Olhos — глаза (мн.ч. от olho).' },
+  'paredes-quarto':   { w:'as paredes do quarto', ipa:'[ɐʒ pɐˈɾɛdɨʃ du ˈkwaɾtu]', m:['стены комнаты / палаты'], gr:'do = de + o. Quarto = комната, палата (и «четвёртый»).' },
+  'caramba':          { w:'caramba', ipa:'[kɐˈɾɐ̃bɐ]', m:['чёрт возьми! ёлки!', 'восклицание удивления или раздражения'] },
+  'nevoeiro-cabeca':  { w:'o nevoeiro na cabeça', ipa:'[u nɨˈvwejɾu nɐ kɐˈbɛsɐ]', m:['туман в голове', 'помутнение рассудка'], gr:'Nevoeiro = туман (от neve — снег). Cabeça = голова. Образное выражение.' },
+  'memoria':          { w:'a minha memória', ipa:'[ɐ ˈmiɲɐ mɨˈmɔɾiɐ]', m:['моя память', 'мои воспоминания'], gr:'minha — притяжательное «моя» (ж.р., согласуется с memória). Meu/minha = мой/моя.' },
+  'noites-longas':    { w:'noites longas', ipa:'[ˈnojtɨʃ ˈlõɡɐʃ]', m:['долгие ночи'], gr:'noite (ж.р.) → мн.ч. noites. Прилагательное согласуется: longa → longas.' },
+  'enfermeira':       { w:'enfermeira', ipa:'[ẽfɨɾˈmejɾɐ]', m:['медсестра', 'медицинская сестра', 'enfermeiro — медбрат (м.р.)'] },
+  'injecoes':         { w:'injeções', ipa:'[ĩʒɨˈsõjʃ]', m:['уколы, инъекции', 'injeção — укол (ед.ч.)'] },
+  'algem-vinha':      { w:'alguém vinha', ipa:'[alˈɡẽj ˈviɲɐ]', m:['кто-то приходил'], gr:'alguém — неопред. местоим. «кто-то». Vinha — imperfeito от vir.' },
+  'seringa':          { w:'seringa', ipa:'[sɨˈɾĩɡɐ]', m:['шприц', 'seringa de água — водяной пистолет (разг.)'] },
+  'lembrei-me':       { w:'lembrei-me disto', ipa:'[lẽˈbɾej mɨ ˈdiʃtu]', m:['я это вспомнил'], gr:'lembrar-se de = вспомнить. Disto = de + isto. -me — возвратная частица 1-го лица.' },
+  'acho-que-nao':     { w:'acho que não', ipa:'[ˈaʃu kɨ nɐ̃w]', m:['думаю, что нет', 'наверное, нет'], gr:'achar que = «думать, что». Acho = 1-е л. ед.ч. от achar.' },
+  'drogas':           { w:'drogas', ipa:'[ˈdɾɔɡɐʃ]', m:['препараты, наркотики', 'droga — лекарство (разг.), дрянь', 'Que droga! — Вот досада!'] },
+  'de-repente':       { w:'de repente', ipa:'[dɨ ʁɨˈpẽtɨ]', m:['вдруг, внезапно', 'неожиданно'] },
+  'como-me-sinto':    { w:'como eu me sinto', ipa:'[ˈkomu ˈew mɨ ˈsĩtu]', m:['как я себя чувствую'], gr:'sentir-se = чувствовать себя (возвратный). Sinto = 1-е л. ед.ч. от sentir.' },
+  'com-muito-cuidado':{ w:'com muito cuidado', ipa:'[kõ ˈmujtu kwiˈdadu]', m:['очень осторожно', 'с большой осторожностью'] },
+  'voz-interior':     { w:'a minha voz interior', ipa:'[ɐ ˈmiɲɐ vɔʒ ĩtɨɾiˈoɾ]', m:['мой внутренний голос'] },
+  'porta-abriu':      { w:'a porta', ipa:'[ɐ ˈpɔɾtɐ]', m:['дверь', 'a porta abriu — дверь открылась'] },
+  'enfermeira-saiu':  { w:'a enfermeira saiu', ipa:'[ɐ ẽfɨɾˈmejɾɐ sɐˈiw]', m:['медсестра вышла'], gr:'saiu — прош. от sair, 3-е лицо.' },
+  'na-memoria':       { w:'na memória', ipa:'[nɐ mɨˈmɔɾiɐ]', m:['в памяти', 'в воспоминаниях'], gr:'na = em + a.' },
+  'acidente-carro':   { w:'um acidente de carro', ipa:'[ũ ɐsiˈdẽtɨ dɨ ˈkaʁu]', m:['автомобильная авария', 'ДТП'] },
+  'acidente':         { w:'acidente', ipa:'[ɐsiˈdẽtɨ]', m:['авария, происшествие', 'несчастный случай'] },
+  'no-hospital':      { w:'no hospital', ipa:'[nu oʃpiˈtal]', m:['в больнице'], gr:'no = em + o.' },
+  'nao-sei':          { w:'Não sei', ipa:'[nɐ̃w sej]', m:['Не знаю', 'Понятия не имею'] },
+  'minhas-pernas':    { w:'as minhas pernas', ipa:'[ɐʒ ˈmiɲɐʃ ˈpɛɾnɐʃ]', m:['мои ноги'], gr:'minhas — мн.ч. от minha. Согласуется с pernas (ж.р., мн.ч.).' },
+  'perfeitamente':    { w:'perfeitamente', ipa:'[pɨɾfɐjtɐˈmẽtɨ]', m:['прекрасно, отлично', 'совершенно, абсолютно', 'именно так (подтверждение)'] },
+  'corpo-fraco':      { w:'o meu corpo estava fraco', ipa:'[u ˈmew ˈkoɾpu iʃˈtavɐ ˈfɾaku]', m:['моё тело было слабым'], gr:'Fraco = слабый. Estava — imperfeito от estar (временное состояние).' },
+  'noite-escura':     { w:'uma noite escura', ipa:'[ũmɐ ˈnojtɨ iʃˈkuɾɐ]', m:['тёмная ночь', 'escuro/a = тёмный / тёмная'] },
+  'estrelas-ceu':     { w:'estrelas no céu', ipa:'[iʃˈtɾɛlɐʃ nu ˈsɛw]', m:['звёзды на небе'], gr:'no céu = em + o céu. Estrela (ж.р.) → estrelas (мн.ч.).' },
+  'no-chao':          { w:'no chão', ipa:'[nu ˈʃɐ̃w̃]', m:['на полу', 'на земле'], gr:'no = em + o. Chão = пол, земля.' },
+  'levantei-me':      { w:'eu levantei-me', ipa:'[lɨvɐ̃ˈtej mɨ]', m:['я встал / поднялся'], gr:'levantar-se = вставать (возвратный). -me — возвратная частица 1-го лица.' },
+  'da-cama':          { w:'da cama', ipa:'[dɐ ˈkɐmɐ]', m:['с кровати', 'от кровати'], gr:'da = de + a.' },
+  'primeiro-passo':   { w:'o primeiro passo', ipa:'[u pɾiˈmejɾu ˈpasu]', m:['первый шаг', 'passo = шаг'] },
+  'pernas-aguentam':  { w:'as pernas aguentam', ipa:'[ɐʒ ˈpɛɾnɐʃ ɐɡwẽˈtɐ̃w]', m:['ноги держат', 'ноги справляются'], gr:'aguentar = выдерживать, справляться. 3-е л. мн.ч.' },
+  'sair':             { w:'sair', ipa:'[sɐˈiɾ]', m:['выйти, уйти', 'уехать, выбраться'] },
+  'na-cama':          { w:'na cama', ipa:'[nɐ ˈkɐmɐ]', m:['в кровати', 'на кровати'], gr:'na = em + a.' },
+  'comecei-pensar':   { w:'comecei a pensar', ipa:'[kumɨˈsej ɐ pẽˈsaɾ]', m:['начал думать'], gr:'começar a + infinitivo = начать делать что-то. Comecei — прош. 1-е лицо.' },
+  'porcaria':         { w:'Que porcaria', ipa:'[kɨ puɾkɐˈɾiɐ]', m:['Какая дрянь! Вот досада!'], gr:'Que + существит. = восклицание «Какой/Что за…!». Porcaria (от porco — свинья) = дрянь, ерунда.' },
+  'seringa-mao':      { w:'com uma seringa na mão', ipa:'[kõ ũmɐ sɨˈɾĩɡɐ nɐ mɐ̃w]', m:['со шприцом в руке'], gr:'na mão = em + a mão. Mão = рука (кисть). Mãos = руки.' },
+  'boa-noite':        { w:'Boa noite', ipa:'[ˈboɐ ˈnojtɨ]', m:['Добрый вечер / Спокойной ночи', 'Приветствие и прощание с наступлением темноты'] },
+  'posso-sair':       { w:'posso sair daqui', ipa:'[ˈposu sɐˈiɾ dɐˈki]', m:['могу ли я отсюда выйти?'], gr:'posso = 1-е л. от poder. Daqui = de + aqui (отсюда).' },
+  'medico':           { w:'médico', ipa:'[ˈmɛdiku]', m:['врач', 'доктор', 'médica — врач (ж.р.)'] },
+  'por-favor':        { w:'Por favor', ipa:'[puɾ fɐˈvoɾ]', m:['пожалуйста', 'будьте добры'] },
+  'obrigado-nao':     { w:'obrigado, já não quero', ipa:'[obɾiˈɡadu ʒa nɐ̃w ˈkɛɾu]', m:['спасибо, уже не хочу / не надо'], gr:'já não = «уже нет, больше не». Obrigado (м.р.) / Obrigada (ж.р.).' },
+  'injecao':          { w:'injeção', ipa:'[ĩʒɨˈsɐ̃w]', m:['укол, инъекция', 'injeções — мн.ч.'] },
+  'medico-mandou':    { w:'o médico mandou', ipa:'[u ˈmɛdiku mɐ̃ˈdow]', m:['врач приказал / велел'], gr:'mandar = приказывать. Mandou — прош. 3-е лицо.' },
+  'medico-vem':       { w:'o médico vem aqui', ipa:'[u ˈmɛdiku vẽj ɐˈki]', m:['пусть врач придёт сюда'], gr:'vem = 3-е л. наст. от vir. Vir aqui = прийти сюда.' },
+  'bem':              { w:'Bem', ipa:'[bẽj]', m:['Ладно / Хорошо (уступка)', 'хорошо (нареч.)', 'добро, благо (сущ.)'] },
+  'ao-medico':        { w:'ao médico', ipa:'[ɐw ˈmɛdiku]', m:['к врачу / врачу (дат.)'], gr:'ao = a + o. Доложить кому? — ao médico.' },
+  'amanha-manha':     { w:'amanhã de manhã', ipa:'[ɐmɐˈɲɐ̃ dɨ mɐˈɲɐ̃]', m:['завтра утром'], gr:'amanhã = завтра. De manhã = утром. Вместе — «завтра утром».' },
+  'impossivel':       { w:'impossível', ipa:'[ĩpoˈsivɛl]', m:['невозможно', 'невозможный'] },
+  'clinica-privada':  { w:'uma clínica privada', ipa:'[ũmɐ ˈklinikɐ pɾiˈvadɐ]', m:['частная клиника'] },
+  'familia':          { w:'a minha família', ipa:'[ɐ ˈmiɲɐ fɐˈmiliɐ]', m:['моя семья'] },
+  'amigos':           { w:'os meus amigos', ipa:'[uʒ ˈmewʒ ɐˈmiɡuʃ]', m:['мои друзья', 'amigo — друг, amiga — подруга'] },
+  'inimigos':         { w:'os inimigos', ipa:'[uʒ iniˈmiɡuʃ]', m:['враги', 'inimigo — враг, противник'] },
+  'meu-carro':        { w:'o meu carro', ipa:'[u ˈmew ˈkaʁu]', m:['моя машина', 'carro = автомобиль'] },
+  'nao-sabia':        { w:'eu não sabia quem eu era', ipa:'[nɐ̃w sɐˈbiɐ kẽj ˈew ˈɛɾɐ]', m:['я не знал, кто я такой'], gr:'sabia — imperfeito от saber. Era — imperfeito от ser. Оба описывают длившееся незнание.' },
+  'tirei-ligaduras':  { w:'tirei as ligaduras', ipa:'[tiˈɾej ɐʒ liɡɐˈduɾɐʃ]', m:['снял повязки / бинты'], gr:'tirar = снимать, убирать. Ligaduras = бинты, повязки. Tirei — прош. 1-е лицо.' },
+  'parti-gesso-direita':{ w:'parti o gesso na perna direita', ipa:'[pɐɾˈti u ˈʒɛsu nɐ ˈpɛɾnɐ diˈɾejtɐ]', m:['разбил гипс на правой ноге'], gr:'partir = разбить (и «уехать»). Direita = правая; direito = правый / право.' },
+  'sair-rapido':      { w:'sair daqui o mais rápido possível', ipa:'[sɐˈiɾ dɐˈki u majʃ ˈʁapidu poˈsivɛl]', m:['уйти отсюда как можно быстрее'], gr:'o mais … possível = «как можно более…». Буквально: «самое быстрое возможное».' },
+  'parti-gesso-esquerda':{ w:'parti o gesso na perna esquerda', ipa:'[pɐɾˈti u ˈʒɛsu nɐ ˈpɛɾnɐ iʃˈkɛɾdɐ]', m:['разбил гипс на левой ноге'], gr:'Esquerda = левая. Direita / esquerda = правый / левый.' },
+  'armario':          { w:'armário', ipa:'[ɐɾˈmaɾiu]', m:['шкаф', 'гардероб'] },
+  'vazio':            { w:'Vazio', ipa:'[vɐˈziu]', m:['пустой / пусто', 'vazia — ж.р.'] },
+  'quarto':           { w:'quarto', ipa:'[ˈkwaɾtu]', m:['комната', 'палата (больничная)', 'четвёртый (порядков.)'] },
+  'homem-bata':       { w:'homem de bata branca', ipa:'[ˈomẽj dɨ ˈbatɐ ˈbɾɐ̃kɐ]', m:['мужчина в белом халате'], gr:'bata branca = белый халат (медицинский).' },
+  'hora-injecao':     { w:'É hora da injeção', ipa:'[ɛ ˈɔɾɐ dɐ ĩʒɨˈsɐ̃w]', m:['Пора укола / Время укола'], gr:'É hora de/da = «пора + …». Da = de + a.' },
+  'senhor-medico':    { w:'O senhor é médico?', ipa:'[u sɨˈɲoɾ ɛ ˈmɛdiku]', m:['Вы врач?'], gr:'O senhor = вежливое «вы» (дословно «господин»). Более формально, чем você.' },
+  'vou-fazer-injecao':{ w:'vou fazer a injeção', ipa:'[vow fɐˈzeɾ ɐ ĩʒɨˈsɐ̃w]', m:['я сделаю укол (всё равно)'], gr:'vou + infinitivo = futuro próximo (ближайшее будущее). Буквально: «иду сделать укол».' },
+  'roupas':           { w:'roupas', ipa:'[ˈʁowpɐʃ]', m:['одежда', 'roupa = одежда (ед.ч., собир.)', 'roupas = предметы одежды'] },
+  'tira-roupa':       { w:'Tira a roupa!', ipa:'[ˈtiɾɐ ɐ ˈʁowpɐ]', m:['Снимай одежду!'], gr:'Tira — императив от tirar (2-е л.). A roupa = одежда (с артиклем — конкретная вещь).' },
+};
+
+// Tooltip logic
+const tip = document.getElementById('word-tip');
+const wtWord = document.getElementById('wt-word');
+const wtIpa = document.getElementById('wt-ipa');
+const wtMeanings = document.getElementById('wt-meanings');
+const wtGr = document.getElementById('wt-gr');
+
+function showTip(el) {
+  const key = el.dataset.v;
+  const d = W[key];
+  if (!d) return;
+
+  wtWord.textContent = d.w;
+  wtIpa.textContent = d.ipa || '';
+  wtMeanings.innerHTML = d.m.length === 1
+    ? `<span>${d.m[0]}</span>`
+    : `<ol style="margin:0;padding-left:18px">${d.m.map(s=>`<li>${s}</li>`).join('')}</ol>`;
+  wtGr.innerHTML = d.gr ? d.gr : '';
+  wtGr.style.display = d.gr ? 'block' : 'none';
+
+  tip.style.display = 'block';
+  positionTip(el);
+}
+
+function positionTip(el) {
+  const r = el.getBoundingClientRect();
+  const tw = tip.offsetWidth;
+  const th = tip.offsetHeight;
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const GAP = 8;
+
+  let left = r.left;
+  let top = r.bottom + GAP;
+
+  // don't go off right edge
+  if (left + tw > vw - 8) left = vw - tw - 8;
+  if (left < 8) left = 8;
+
+  // prefer below, but flip above if no room
+  if (top + th > vh - 8) top = r.top - th - GAP;
+  if (top < 8) top = 8;
+
+  tip.style.left = left + 'px';
+  tip.style.top  = top  + 'px';
+}
+
+function hideTip() {
+  tip.style.display = 'none';
+}
+
+document.querySelectorAll('.w[data-v]').forEach(el => {
+  el.addEventListener('click', e => {
+    e.stopPropagation();
+    if (tip.style.display === 'block' && tip.dataset.src === el.dataset.v) {
+      hideTip();
+    } else {
+      tip.dataset.src = el.dataset.v;
+      showTip(el);
+    }
+  });
+});
+
+document.addEventListener('click', () => hideTip());
 </script>
 
 </body>
